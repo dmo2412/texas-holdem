@@ -1,61 +1,81 @@
 var Hand = require("pokersolver").Hand;
 
-const values = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'];
-const suits = ['s', 'c', 'h', 'd'];
-let cards = [];
-for (let i = 0; i < values.length; i++) {
-    for (let j = 0; j < suits.length; j++) {
-        let ele = values[i].concat(suits[j]);
-        cards.push(ele);
+class Hands {
+    constructor() {
+        this.values = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'];
+        this.suits = ['s', 'c', 'h', 'd'];
+        this.cards = [];
+        this.player1 = {
+            name: 'Phil Ivey',
+            stack: 100,
+            cardPool: [],
+            status: 'live'
+        }
+        this.player2 = {
+            name: 'Tom Dwan',
+            stack: 100,
+            cardPool: [],
+            status: 'live'
+        }
+        this.player3 = {
+            name: 'Me',
+            stack: 100,
+            cardPool: [],
+            status: 'live'
+        }
     }
-}
 
-let scramble = function shuffle(cards) {
-    var i, j ,temp;
-    for (i = cards.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        temp = cards[i];
-        cards[i] = cards[j];
-        cards[j] = temp;
+    getDeck() {
+        for (let i = 0; i < this.values.length; i++) {
+            for (let j = 0; j < this.suits.length; j++) {
+                let ele = values[i].concat(suits[j]);
+                this.cards.push(ele);
+            }
+        }
     }
-    return cards;
-};
-cards = scramble(cards);
-
-num = Math.floor(Math.random() * 52);
-let player1 = [];
-let player2 = [];
-let player3 = [];
-let players = [player1, player2, player3];
 
 
-for (let i = 0; i < 2; i++) {
-    player1.push(cards[0]);
-    cards.shift()
-    player2.push(cards[0]);
-    cards.shift()
-    player3.push(cards[0]);
-    cards.shift()
-}
-let middlecards = cards.slice(0, 5);
-player1 = player1.concat(middlecards);
-player2 = player2.concat(middlecards);
-player3 = player3.concat(middlecards);
-
-const getWinner = () => {
+    shuffle() {
+        var i, j ,temp;
+        for (i = this.cards.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            temp = this.cards[i];
+            this.cards[i] = this.cards[j];
+            this.cards[j] = temp;
+        };
+    };
     
-    var hand1 = Hand.solve(player1);
-    var hand2 = Hand.solve(player2);
-    var hand3 = Hand.solve(player3);
-    var winner = Hand.winners([hand1, hand2, hand3]); 
-    // console.log(winner)
-    if (hand1.cardPool === winner[0].cardPool) {
-        return player1
-    } else if (hand2.cardPool === winner[0].cardPool) {
-        player2
-    } else {
-        return player3
+
+    getCards() {
+        for (let i = 0; i < 2; i++) {
+            this.player1.cardPool.push(this.cards[0]);
+            this.cards.shift()
+            this.player2.cardPool.push(this.cards[0]);
+            this.cards.shift()
+            this.player3.cardPool.push(this.cards[0]);
+            this.cards.shift()
+        }
+        let middlecards = cards.slice(0, 5);
+        this.player1.cardPool.concat(middlecards);
+        this.player2.cardPool.concat(middlecards);
+        this.player3.cardPool.concat(middlecards);
+        debugger
     }
-    // console.log(winner)
+
+    getWinner() {
+        
+        var hand1 = Hand.solve(player1);
+        var hand2 = Hand.solve(player2);
+        var hand3 = Hand.solve(player3);
+        var winner = Hand.winners([hand1, hand2, hand3]); 
+        // console.log(winner)
+        if (hand1.cardPool === winner[0].cardPool) {
+            return player1
+        } else if (hand2.cardPool === winner[0].cardPool) {
+            return player2
+        } else {
+            return player3
+        }
+    }
 }
-module.exports = getWinner;
+module.exports = Hands;

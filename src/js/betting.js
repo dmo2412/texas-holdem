@@ -1,24 +1,23 @@
-const winner = require('./hands');
+const Hands = require('./hands');
 
-player1 = {
-    name: 'Phil Ivey',
-    stack: 100,
-    cards: []
-}
-player2 = {
-    name: 'Tom Dwan',
-    stack: 100,
-    cards: []
-}
-player3 = {
-    name: 'Me',
-    stack: 100,
-    cards: []
+class Betting {
+    constructor(player1, player2, player3, cards) {
+        this.player1 = player1;
+        this.player2 = player2;
+        this.player3 = player3;
+        this.cards = cards;
+        this.players = [player1, player2, player3];
+        
+    }
+
+    
+
 }
 
-let players = [player1, player2, player3];
-let bet = 0;
 
+module.exports = Betting;
+
+console.log(Hands)
 
 
 
