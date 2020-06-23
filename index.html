@@ -22,13 +22,16 @@
 
     <canvas id="myCanvas" width="780" height="620"></canvas>
     <script src="https://d3js.org/d3.v4.js" charset="utf-8"></script>
+    <!-- <script src="/path/to/pokersolver.js"></script> -->
+    <script src=>"./src/js/hands.js"</script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <script>
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
         ctx.beginPath();
-        ctx.arc(390, 310, 250, 0, Math.PI * 2, false);
-        ctx.fillStyle = "green";
+        ctx.arc(390, 310, 250, 0, Math.PI * 2, false, "green");
+        ctx.fillStyle = "tomato";
         ctx.fill();
         ctx.closePath();
     </script>
