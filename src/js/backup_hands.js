@@ -25,10 +25,10 @@ let scramble = function shuffle(cards) {
 };
 cards = scramble(cards);
 
-num = Math.floor(Math.random() * 52);
-export let player1 = [];
-export let player2 = [];
-export let player3 = [];
+// num = Math.floor(Math.random() * 52);
+let player1 = [];
+let player2 = [];
+let player3 = [];
 let dealt = [];
 let players = [player1, player2, player3];
 
@@ -41,23 +41,30 @@ for (let i = 0; i < 2; i++) {
     player3.push(cards[0]);
     cards.shift()
 }
-export let middlecards = cards.slice(0, 5);
+
+let middlecards = cards.slice(0, 5);
 player1 = player1.concat(middlecards);
 player2 = player2.concat(middlecards);
 player3 = player3.concat(middlecards);
-export var hand1 = Hand.solve(player1);
+var hand1 = Hand.solve(player1);
 console.log(hand1.cardPool);
 console.log(hand1);
-export var hand2 = Hand.solve(player2);
-export var hand3 = Hand.solve(player3);
+var hand2 = Hand.solve(player2);
+var hand3 = Hand.solve(player3);
 console.log(hand2);
 console.log(hand3);
 var winner = Hand.winners([hand1, hand2, hand3]);
 console.log(winner)
-if (hand1.cardPool === winner[0].cardPool) {
-    export const champ = player1;
-} else if (hand2.cardPool === winner[0].cardPool) {
-    export const champ = player2;
-} else {
-    export const champ = player3;
+
+const champ = () => {
+    if (hand1.cardPool === winner[0].cardPool) {
+        return player1
+    } else if (hand2.cardPool === winner[0].cardPool) {
+        return player2;
+    } else {
+        return player3;
+    }
 }
+
+
+console.log(winner);

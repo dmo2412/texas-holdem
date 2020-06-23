@@ -23,6 +23,7 @@ class Hands {
             cardPool: [],
             status: 'live'
         }
+        this.victor = ''
     }
 
     getDeck() {
@@ -59,7 +60,6 @@ class Hands {
         this.player1.cardPool.concat(middlecards);
         this.player2.cardPool.concat(middlecards);
         this.player3.cardPool.concat(middlecards);
-        debugger
     }
 
     getWinner() {
@@ -67,15 +67,17 @@ class Hands {
         var hand1 = Hand.solve(player1);
         var hand2 = Hand.solve(player2);
         var hand3 = Hand.solve(player3);
+        // let victor;
         var winner = Hand.winners([hand1, hand2, hand3]); 
         // console.log(winner)
         if (hand1.cardPool === winner[0].cardPool) {
-            return player1
+            this.victor = this.player1
         } else if (hand2.cardPool === winner[0].cardPool) {
-            return player2
+            this.victor = this.player1
         } else {
-            return player3
+            this.victor = this.player1
         }
     }
 }
 module.exports = Hands;
+

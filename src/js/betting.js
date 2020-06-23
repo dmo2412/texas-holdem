@@ -7,9 +7,11 @@ class Betting {
         this.player3 = player3;
         this.cards = cards;
         this.players = [player1, player2, player3];
-        
     }
 
+    firstBet() {
+        
+    }
     
 
 }
@@ -17,7 +19,7 @@ class Betting {
 
 module.exports = Betting;
 
-console.log(Hands)
+
 
 
 
