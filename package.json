@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/dmo2412/texas-holdem#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pokersolver": "^2.1.3"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",

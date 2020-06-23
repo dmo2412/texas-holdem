@@ -7,7 +7,7 @@
     c) Allow players to bet(6-24)
     d) visualization(6-26)
 3) Wireframes: https://wireframe.cc/EyJkGB
-4) Architecture and technology: javascript + texas-holdem-api-classes (https://deckofcardsapi.com/) Web API's => DOM, canvas
+4) Architecture and technology: javascript + poker solver(https://github.com/goldfire/pokersolver) Web API's => DOM, canvas
 5) bonus features: e) Add sound effects d) add players in seats
 
 
