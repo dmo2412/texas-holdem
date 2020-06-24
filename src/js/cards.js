@@ -2,10 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
     // const cards = document.querySelector('.cards');
-    const playerCards = document.querySelector('.playerCards');
-    const flop = document.querySelector('.flop');
-    const turn = document.querySelector('.turn');
-    const river = document.querySelector('.river')
+    const playercards = document.querySelector('playercards');
+    const flop = document.querySelector('flop');
+    const turn = document.querySelector('turn');
+    const river = document.querySelector('river');
+    const victor = document.querySelector('victor');
     const values = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'];
     const suits = ['s', 'c', 'h', 'd'];
     let cards = [];
@@ -13,21 +14,24 @@ document.addEventListener("DOMContentLoaded", () => {
         name: 'Me',
         stack: 100,
         cardPool: [],
+        holecards: [],
         status: 'live'
     }
     let player2 = {
         name: 'Tom Dwan',
         stack: 100,
         cardPool: [],
+        holecards: [],
         status: 'live'
     }
     let player3 = {
         name: 'Phil Ivey',
         stack: 100,
         cardPool: [],
+        holecards: [],
         status: 'live'
     }
-
+    
     for (let i = 0; i < values.length; i++) {
         for (let j = 0; j < suits.length; j++) {
             let ele = values[i].concat(suits[j]);
@@ -41,13 +45,23 @@ document.addEventListener("DOMContentLoaded", () => {
         cards[i] = cards[j];
         cards[j] = temp;
     };
-    for (let i = 0; i < 2; i++) {
-        player1.cardPool.push(cards[0]);
-        cards.shift()
-        player2.cardPool.push(cards[0]);
-        cards.shift()
-        player3.cardPool.push(cards[0]);
-        cards.shift()
+    document.getElementById('playercards').onclick = function dealCards() {
+        for (let i = 0; i < 2; i++) {
+            player1.cardPool.push(cards[0]);
+            player1.holecards.push(cards[0]);
+            cards.shift()
+            player2.cardPool.push(cards[0]);
+            player2.holecards.push(cards[0]);
+            cards.shift()
+            player3.cardPool.push(cards[0]);
+            player3.holecards.push(cards[0]);
+            cards.shift()
+        }
+        let arr = [player1.holecards, player2.holecards, player3.holecards];
+        console.log(arr)
+        // debugger
+        // playercards.innerHTML = '1';
+        // debugger
     }
 
     let middlecards = cards.slice(0, 5);
@@ -65,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let hand2 = Hand.solve(player2.cardPool);
     let hand3 = Hand.solve(player3.cardPool);
     let hands = [hand1, hand2, hand3];
+    // playerCards.append(hands)
     let winner = Hand.winners(hands);
     let champ;
     if (hand1.cardPool === winner[0].cardPool) {
