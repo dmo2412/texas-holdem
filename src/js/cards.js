@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         status: 'live'
     }
     
+    
     for (let i = 0; i < values.length; i++) {
         for (let j = 0; j < suits.length; j++) {
             let ele = values[i].concat(suits[j]);

@@ -1,40 +1,144 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8" />
-    <title>Texas Hold'em</title>
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
-
-        canvas {
-            background: #eee;
-            display: block;
-            margin: 0 auto;
-        }
-    </style>
+    
+    <head>
+        <meta charset="utf-8" />
+        <title>Texas Hold'em</title>
+        <script src="https://d19vzq90twjlae.cloudfront.net/leaflet-0.6.1/leaflet.js"></script>
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+        <script src="https://d3js.org/topojson.v1.min.js"></script>
+        <script src="https://d3js.org/d3.v5.js" charset="utf-8"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="./src/js/cards.js"></script>
+        <script src="./node_modules/pokersolver/pokersolver.js"></script>
+        <script src="./src/js/scoreboard.js"></script>
+        <link rel='stylesheet' type="text/css" href='./src/scss/cards.css'>
+        <link rel='stylesheet' type="text/css" href='./src/scss/table_scoreboard.css'>
+    
+        <h1 class="title">Welcome to Danny's Poker Room</h1>
 </head>
 
-<body>
+<body class='body'>
+    <div id = 'pokertable'></div>
+        <!-- <svg width="50" height="50">
+            <ellipse cx="25" cy="25" rx="15" ry="10" fill="green" />
+        </svg> -->
 
-    <canvas id="myCanvas" width="780" height="620"></canvas>
-    <script src="https://d3js.org/d3.v4.js" charset="utf-8"></script>
-    <!-- <script src="/path/to/pokersolver.js"></script> -->
-    <script src=>"./src/js/hands.js"</script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <div id='chipcount'>
+        Chip Count 
+        <p id='chipcountborder'></p>
+    </div>
+    <!-- <div class="outline">
+        <div class="top"><span>A</span><span>&hearts;</span></div> -->
+        <!-- <h1>&hearts;</h1>
+        <div class="bottom"><span>&hearts;</span><span>A</span></div> -->
+    <!-- </div> -->
+    
+
+
+
+    <div id='canvas-wrap'></div>
+    <canvas id="myCanvas" ></canvas>
+    <!-- <div id='balls'>morgan</div> -->
+        <!-- <div id="playercards" onclick="myFunction()">Deal Cards</div> -->
+
+    <div id="flop" onclick="flopCards()">Flop</div>
+    
 
     <script>
+        function flopCards() {
+            document.getElementById("flop")
+        }
+    </script>
+
+    <div id="turn" onclick="turnCard()">Turn</div>
+
+    <script>
+        function turnCard() {
+            document.getElementById("turn")
+        }
+    </script>
+
+    <div id="river" onclick="riverCard()">River</div>
+
+    <script>
+        function riverCard() {
+            document.getElementById("river")
+        }
+    </script>
+
+    <button id="hands">Deal Cards</button>
+    <script>
+        function dealCards() {
+            document.getElementById("hands")
+        }
+    </script>
+    
+    <div id="solve" onclick="solveWinner()">'</div>
+
+    <script>
+        function solveWinner() {
+            document.getElementById("solve")
+        }
+    </script>
+
+    <!-- <form id="betform">
+        <label for="betamount">Bet Amount</label>
+        <input type="number" id='betamount' name='betamount'>
+    </form> -->
+    <button onclick='placeBet()' id='betbutton'>Place Bet</button>
+
+    <script>
+        function placeBet() {
+            document.getElementById("betbutton")
+        }
+    </script>
+
+    <!-- <input type="number" type="submit" id="betamount"> -->
+    <!-- <button type="submit" id="submitbet"></button> -->
+    <!-- add +1 for turn and mod for who's turn it is -->
+    <!-- <script>
+        function placeBet() {
+            document.getElementById("submitbet")
+        }
+    </script> -->
+
+    
+
+    <!-- <div id='container'></div> -->
+    
+    <!-- <script id='table'>
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
         ctx.beginPath();
-        ctx.arc(390, 310, 250, 0, Math.PI * 2, false, "green");
-        ctx.fillStyle = "tomato";
+        ctx.ellipse(300, 220, 130, 180, Math.PI / 2, 0, 2 * Math.PI);
+        ctx.fillStyle = "green";
+        ctx.lineWidth = 20;
+        ctx.strokeStyle = "black";
+        ctx.stroke();
         ctx.fill();
         ctx.closePath();
-    </script>
+    </script> -->
+
+   
+    
+
+
+
+
+
+    <!-- <svg class='testing'></svg> -->
+    <!-- <div id='chipcount'></div> -->
+    <!-- <script class='scorechart'>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        ctx.beginPath();
+        ctx.rect(600, 20, 150, 200);
+        ctx.fillStyle = "tomato";
+        ctx.lineWidth = 10;
+        ctx.fill();
+        ctx.stroke();
+    </script> -->
     
 
 </body>

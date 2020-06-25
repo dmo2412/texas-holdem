@@ -1,0 +1,70 @@
+#playercards {
+    color: red;
+}
+
+.body {
+    background-color: lightskyblue;
+} 
+
+#canvas-wrap {
+    position: relative;
+}
+
+#hands {
+    /* position: relative; */
+    /* margin-top: -20%; */
+    margin-left: 60%;
+    margin-top: 20%;
+    height: 50px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: lightskyblue;
+    border: 3px solid black;
+}
+#flop {
+    /* position: relative; */
+    margin-top: -20%;
+    left: 30%;
+}
+#turn {
+    /* position: relative; */
+    margin-top: -1.2%;
+    left: 40%;
+}
+#river {
+    /* position: relative; */
+    margin-top: -1.2%;
+    left: 45%;
+}
+
+#solve {
+    /* position: relative; */
+    left: 25%;
+}
+
+.title {
+    position: relative;
+    background-color: lightskyblue;
+    margin-top: -5px;
+    padding-left: 20%;
+    font-size: 50px;
+}
+
+.name {
+    margin-left: 200px;
+    margin-bottom: -200px;
+}
+
+
+
+
+
+
+/* #canvas-wrap { position:relative } /* Make this a positioned parent */
+/* #balls     { position:relative; margin-top:-20%; left:30px; } */ */
+
+/* <div class="outline">
+        <div class="top"><span>A</span><span>&hearts;</span></div>
+        <h1>&hearts;</h1>
+        <div class="bottom"><span>&hearts;</span><span>A</span></div>
+    </div> */

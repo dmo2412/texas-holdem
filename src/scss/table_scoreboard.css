@@ -1,0 +1,37 @@
+#pokertable {
+    width: 45%;
+    height: 400px;
+    background-color: green;
+    border-radius: 1000px;
+    margin-left: 12%;
+    margin-top: 9%;
+    border: 50px solid black;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    
+}
+
+#chipcount {
+    width: 15%;
+    margin-left: 80%;
+    margin-top: -40%;
+    height: 350px;
+    background-color: tomato;
+    border: 9px solid black;
+    text-align: center;
+    line-height: 3 0px;
+}
+
+#chipcountborder {
+    border-bottom: 3px solid black;
+    margin-top: -4px;
+}
+
+.playernames {
+    color: white;
+}
+
+.pot {
+    color: white;
+    margin-top: 29%;
+    margin-left: 44%;
+}
