@@ -1,6 +1,7 @@
 
 
 const scoreboard = () => {
+    debugger
     var pot = {name: 'Pot', chips: 0}
     let middlecards = [];
     let c;
