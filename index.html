@@ -1,40 +1,96 @@
 <!DOCTYPE html>
 <html>
+    
+    <head>
+        <meta charset="utf-8" />
+        <title>Texas Hold'em</title>
+        <script src="https://d19vzq90twjlae.cloudfront.net/leaflet-0.6.1/leaflet.js"></script>
+        <script type="module" src="./javascript/dist/bundle.js"></script>
+        <!-- <script src="./src/js/index.js"></script> -->
 
-<head>
-    <meta charset="utf-8" />
-    <title>Texas Hold'em</title>
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+        <script src="https://d3js.org/topojson.v1.min.js"></script>
+        <script src="https://d3js.org/d3.v5.js" charset="utf-8"></script>
+        <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+        <!-- <script src="./src/js/cards.js"></script> -->
+        <script src="./node_modules/pokersolver/pokersolver.js"></script>
+        <script src="./javascript/src/scss/chips.css"></script>
+        <link  href='./javascript/src/scss/cards.css' type="text/css" rel="stylesheet">
+        <link  href='./javascript/src/scss/table_scoreboard.css' type="text/css" rel="stylesheet">
+        <!-- <script src="./src/js/scoreboard.js"></script> -->
+        <!-- <script src="./src/js/player_chips.js"></script> -->
 
-        canvas {
-            background: #eee;
-            display: block;
-            margin: 0 auto;
-        }
-    </style>
+        <style>
+            * {padding: 0; margin: 0;}
+        </style>
+    
+        <h1 class="title">Welcome to Danny's Poker Room</h1>
+        <div class='champ'></div>
 </head>
 
-<body>
+<body class='body'>
+    <script type="module" src="./javascript/dist/bundle.js"></script>
+    <div id = 'pokertable'>
+        <div id='player2carddiv'>Tom Dwan</div>
+        <div id='player3carddiv'>Phil Ivey</div>
+        <span class="dot"></span>
+        <div id='player1carddiv'>Me</div>
+        <canvas id="myCanvas"  ></canvas>
+    </div>
+    <div id='chipcount'>
+        Chip Count 
+        <header id='chipcountborder'></header>
+    </div>
 
-    <canvas id="myCanvas" width="780" height="620"></canvas>
-    <script src="https://d3js.org/d3.v4.js" charset="utf-8"></script>
-    <!-- <script src="/path/to/pokersolver.js"></script> -->
-    <script src=>"./src/js/hands.js"</script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <button id="hands">Deal Cards</button>
+    <!-- <script>
+        function dealCards() {
+            document.getElementById("hands")
+        }
+    </script> -->
+    
+    <button id='betbutton'>Place Bet</button>
 
-    <script>
+    <!-- <script>
+        function placeBet() {
+            document.getElementById("betbutton")
+        }
+    </script> -->
+
+    
+    
+    <!-- <script id='table'>
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
         ctx.beginPath();
-        ctx.arc(390, 310, 250, 0, Math.PI * 2, false, "green");
-        ctx.fillStyle = "tomato";
+        ctx.ellipse(300, 220, 130, 180, Math.PI / 2, 0, 2 * Math.PI);
+        ctx.fillStyle = "green";
+        ctx.lineWidth = 20;
+        ctx.strokeStyle = "black";
+        ctx.stroke();
         ctx.fill();
         ctx.closePath();
-    </script>
+    </script> -->
+
+   
+    
+
+
+
+
+
+    <!-- <svg class='testing'></svg> -->
+    <!-- <div id='chipcount'></div> -->
+    <!-- <script class='scorechart'>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        ctx.beginPath();
+        ctx.rect(600, 20, 150, 200);
+        ctx.fillStyle = "tomato";
+        ctx.lineWidth = 10;
+        ctx.fill();
+        ctx.stroke();
+    </script> -->
     
 
 </body>

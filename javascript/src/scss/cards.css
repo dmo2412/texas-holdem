@@ -1,0 +1,104 @@
+#playercards {
+    color: red;
+}
+
+.body {
+    background-color: lightskyblue;
+} 
+
+#canvas-wrap {
+    position: relative;
+}
+
+#hands {
+    /* position: relative; */
+    /* margin-top: -20%; */
+    margin-left: 60%;
+    margin-top: 20%;
+    height: 50px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: lightskyblue;
+    border: 3px solid black;
+}
+#flop {
+    /* position: relative; */
+    margin-top: -20%;
+    left: 30%;
+}
+#turn {
+    /* position: relative; */
+    margin-top: -1.2%;
+    left: 40%;
+}
+#river {
+    /* position: relative; */
+    margin-top: -1.2%;
+    left: 45%;
+}
+
+#solve {
+    /* position: relative; */
+    left: 25%;
+}
+
+.title {
+    position: relative;
+    background-color: lightskyblue;
+    margin-top: -5px;
+    padding-left: 20%;
+    font-size: 50px;
+}
+
+.name {
+    margin-left: 200px;
+    margin-bottom: -200px;
+}
+
+#player1carddiv {
+    margin-left: 5%;
+    margin-top: -16%;
+    color: white;
+    width: 10px;
+}
+
+#player2carddiv {
+    margin-left: 46%;
+    margin-top: 0%;
+}
+
+#player3carddiv {
+    margin-left: 88%;
+    margin-top: 8%;
+}
+
+.flopcards {
+    margin-left: 10%;
+}
+
+/* .champ {
+
+} */
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color:tomato;
+  border-radius: 50%;
+  border: 1px solid black;
+  display: inline-block;
+  position: absolute;
+}
+
+
+
+
+
+
+/* #canvas-wrap { position:relative } /* Make this a positioned parent */
+/* #balls     { position:relative; margin-top:-20%; left:30px; } */ */
+
+/* <div class="outline">
+        <div class="top"><span>A</span><span>&hearts;</span></div>
+        <h1>&hearts;</h1>
+        <div class="bottom"><span>&hearts;</span><span>A</span></div>
+    </div> */
