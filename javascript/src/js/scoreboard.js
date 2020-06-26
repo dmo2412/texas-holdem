@@ -1,14 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => {
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
-    // var me = {name: 'Me', chips: 100};
-    // var tom = {name: 'Tom Dwan', chips: 100};
-    // var phil = {name: 'Phil Ivey', chips: 100};
+
+
+const scoreboard = () => {
     var pot = {name: 'Pot', chips: 0}
     let middlecards = [];
     let c;
     const values = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'];
     const suits = ['s', 'c', 'h', 'd'];
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var x1 = canvas.width / 2;
+    var y1 = canvas.height - 30;
+    var dx = 2;
+    var dy = -10;
     let cards = [];
     let player1 = {
         name: 'Me',
@@ -58,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let betTurn = 0
     let dealTurn = 0;
     document.getElementById('hands').onclick = function dealCards() {
-        // debugger
         // if (dealTurn === 0) {
             // const values = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'];
             // const suits = ['s', 'c', 'h', 'd'];
@@ -78,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 cards[i] = cards[j];
                 cards[j] = temp;
             };
-            debugger
         if (dealTurn === 0) {
             dealTurn += 1
             for (let i = 0; i < 2; i++) {
@@ -117,7 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (betTurn >= 4) {
-            // debugger
             turn = 0;
             betTurn = 0;
             dealTurn = 0;
@@ -141,11 +141,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 .append("p")
                 .text(function (d) { return d.name + " : " + d.chips; })
                 .attr("class", "playernames");
-                debugger
         }
     }
 
     document.getElementById('betbutton').onclick = function placeBet() {
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+        ctx.arc(x1, y1, 10, 0, Math.PI * 2);
+        ctx.fillStyle = "tomato";
+        ctx.fill();
+        ctx.closePath();
+        ctx.strokeStyle = "black";
+        ctx.stroke();
+        x1 += dx;
+        y1 += dy;
+
+
+
         if (betTurn === 0) {
             if (turn % 3 === 0) {
                 player1.chips = player1.chips - 10;
@@ -234,18 +247,17 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(champ)
             // let victor = [champ]
             // champ is a string of the winner's name
+            let champion = [{name: champ}];
             d3.select(".champ").selectAll('p')
-            .data(champ)
+            .data(champion)
             .enter()
             .append("p")
-            // .text(victor + " wins the pot")
-            .text(function (d) {return  champ + ' wins the pot' })
-            // .html((d) => d)
+            .text(function (d) {return  d.name + ' wins the pot' })
             .attr("class", "champ")
             betTurn += 1
-            // champ.chips += pot.chips;
 
         }
     } 
-})
+}
+export default scoreboard;
 
