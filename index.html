@@ -16,36 +16,32 @@
         <link rel='stylesheet' type="text/css" href='./src/scss/table_scoreboard.css'>
     
         <h1 class="title">Welcome to Danny's Poker Room</h1>
+        <div class='champ'></div>
 </head>
 
 <body class='body'>
-    <div id = 'pokertable'></div>
-        <!-- <svg width="50" height="50">
-            <ellipse cx="25" cy="25" rx="15" ry="10" fill="green" />
-        </svg> -->
-
+    <div id = 'pokertable'>
+        
+        <div id='player2carddiv'>Tom Dwan</div>
+        <div id='player3carddiv'>Phil Ivey</div>
+        <div id='player1carddiv'>Me</div>
+    </div>
     <div id='chipcount'>
         Chip Count 
-        <p id='chipcountborder'></p>
+        <header id='chipcountborder'></header>
     </div>
-    <!-- <div class="outline">
-        <div class="top"><span>A</span><span>&hearts;</span></div> -->
-        <!-- <h1>&hearts;</h1>
-        <div class="bottom"><span>&hearts;</span><span>A</span></div> -->
-    <!-- </div> -->
     
 
 
 
     <div id='canvas-wrap'></div>
     <canvas id="myCanvas" ></canvas>
-    <!-- <div id='balls'>morgan</div> -->
-        <!-- <div id="playercards" onclick="myFunction()">Deal Cards</div> -->
-
-    <div id="flop" onclick="flopCards()">Flop</div>
     
 
-    <script>
+    <!-- <div id="flop" onclick="flopCards()">Flop</div> -->
+    
+
+    <!-- <script>
         function flopCards() {
             document.getElementById("flop")
         }
@@ -65,7 +61,7 @@
         function riverCard() {
             document.getElementById("river")
         }
-    </script>
+    </script> -->
 
     <button id="hands">Deal Cards</button>
     <script>
@@ -74,13 +70,13 @@
         }
     </script>
     
-    <div id="solve" onclick="solveWinner()">'</div>
+    <!-- <div id="solve" onclick="solveWinner()">'</div> -->
 
-    <script>
+    <!-- <script>
         function solveWinner() {
             document.getElementById("solve")
         }
-    </script>
+    </script> -->
 
     <!-- <form id="betform">
         <label for="betamount">Bet Amount</label>

@@ -55,6 +55,31 @@
     margin-bottom: -200px;
 }
 
+#player1carddiv {
+    margin-left: 5%;
+    margin-top: -16%;
+    color: white;
+    width: 10px;
+}
+
+#player2carddiv {
+    margin-left: 46%;
+    margin-top: 0%;
+}
+
+#player3carddiv {
+    margin-left: 88%;
+    margin-top: 8%;
+}
+
+.flopcards {
+    margin-left: 10%;
+}
+
+.champ {
+    
+}
+
 
 
 
