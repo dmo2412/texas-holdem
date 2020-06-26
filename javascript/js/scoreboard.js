@@ -1,7 +1,6 @@
 
 
 const scoreboard = () => {
-    debugger
     var pot = {name: 'Pot', chips: 0}
     let middlecards = [];
     let c;
@@ -45,28 +44,18 @@ const scoreboard = () => {
         .text(function (d) { return d.name + " : " + d.chips; })
         .attr("class", "playernames");
 
-    // for (let i = 0; i < values.length; i++) {
-    //     for (let j = 0; j < suits.length; j++) {
-    //         let ele = values[i].concat(suits[j]);
-    //         cards.push(ele);
-    //     }
-    // }
-    // var i, j, temp;
-    // for (i = cards.length - 1; i > 0; i--) {
-    //     j = Math.floor(Math.random() * (i + 1));
-    //     temp = cards[i];
-    //     cards[i] = cards[j];
-    //     cards[j] = temp;
-    // };
     let turn = 0;
     let betTurn = 0
     let dealTurn = 0;
     document.getElementById('hands').onclick = function dealCards() {
-        // if (dealTurn === 0) {
-            // const values = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'];
-            // const suits = ['s', 'c', 'h', 'd'];
-            // let cards = [];
             cards = [];
+            let deck1 = {};
+            let deck2 = {};
+            let deck3 = {};
+            let deck4 = {};
+            let card;
+            let num;
+            let char;
 
             for (let i = 0; i < values.length; i++) {
                 for (let j = 0; j < suits.length; j++) {
@@ -86,6 +75,10 @@ const scoreboard = () => {
             for (let i = 0; i < 2; i++) {
                 player1.holecards.push(cards[0]);
                 player1.cardPool.push(cards[0]);
+                card = cards[0];
+                char = card[0];
+                
+                debugger
                 cards.shift()
                 player2.holecards.push(cards[0]);
                 player2.cardPool.push(cards[0]);
@@ -147,21 +140,31 @@ const scoreboard = () => {
 
     document.getElementById('betbutton').onclick = function placeBet() {
 
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.beginPath();
-        ctx.arc(x1, y1, 10, 0, Math.PI * 2);
-        ctx.fillStyle = "tomato";
-        ctx.fill();
-        ctx.closePath();
-        ctx.strokeStyle = "black";
-        ctx.stroke();
-        x1 += dx;
-        y1 += dy;
+        // ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // ctx.beginPath();
+        // ctx.arc(x1, y1, 10, 0, Math.PI * 2);
+        // ctx.fillStyle = "tomato";
+        // ctx.fill();
+        // ctx.closePath();
+        // ctx.strokeStyle = "black";
+        // ctx.stroke();
+        // x1 += dx;
+        // y1 += dy;
 
 
 
         if (betTurn === 0) {
             if (turn % 3 === 0) {
+                // ctx.clearRect(0, 0, canvas.width, canvas.height);
+                // ctx.beginPath();
+                ctx.arc(20, 20, 10, 0, Math.PI * 2);
+                ctx.fillStyle = "tomato";
+                ctx.fill();
+                ctx.closePath();
+                ctx.strokeStyle = "black";
+                ctx.stroke();
+                x1 += dx;
+                y1 += dy;
                 player1.chips = player1.chips - 10;
             } else if (turn % 3 === 1) {
                 player2.chips = player2.chips - 10;
@@ -181,6 +184,7 @@ const scoreboard = () => {
                     .append("span")
                     .text(function (d) { return d })
                     .attr("class", "flopcards")
+                    
             }
             turn += 1;
             pot.chips += 10;

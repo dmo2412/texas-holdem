@@ -58,8 +58,8 @@
 #player1carddiv {
     margin-left: 5%;
     margin-top: -16%;
-    color: white;
-    width: 10px;
+    /* color: white; */
+    /* width: 10px; */
 }
 
 #player2carddiv {
@@ -87,6 +87,10 @@
   border: 1px solid black;
   display: inline-block;
   position: absolute;
+}
+
+.player1cards {
+    border: 1px solid black;
 }
 
 
