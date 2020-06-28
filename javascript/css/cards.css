@@ -13,14 +13,24 @@
 #hands {
     /* position: relative; */
     /* margin-top: -20%; */
-    margin-left: 60%;
-    margin-top: 20%;
+    margin-left: 80%;
+    /* margin-top: 20%; */
     height: 50px;
     width: 100px;
     border-radius: 20px;
     background-color: lightskyblue;
     border: 3px solid black;
 }
+
+#betbutton {
+    height: 50px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: lightskyblue;
+    border: 3px solid black;
+}
+
+
 #flop {
     /* position: relative; */
     margin-top: -20%;
@@ -57,28 +67,38 @@
 
 #player1carddiv {
     margin-left: 5%;
-    margin-top: -16%;
+    margin-top: -5%;
+    /* margin-bottom: 5%; */
     /* color: white; */
     /* width: 10px; */
 }
 
 #player2carddiv {
     margin-left: 46%;
-    margin-top: 0%;
+    margin-top: 1%;
 }
 
 #player3carddiv {
     margin-left: 88%;
-    margin-top: 8%;
+    margin-top: 18%;
+}
+
+#flopcard-anchor {
+    margin-left: 40%;
 }
 
 .flopcards {
-    margin-left: 10%;
+    /* margin-left: 10%; */
+    border: 1px solid black;
+    width: 28px;
+    height: 34px;
+    color: black;
+    background-color: white;
+    text-align: center;
+    display: inline-block;
 }
 
-/* .champ {
 
-} */
 .dot {
   height: 25px;
   width: 25px;
@@ -86,14 +106,65 @@
   border-radius: 50%;
   border: 1px solid black;
   display: inline-block;
-  position: absolute;
+  position: fixed;
+  text-align: center;
 }
 
 .player1cards {
+    display: inline-block;
     border: 1px solid black;
+    width: 28px;
+    height: 34px;
+    color: black;
+    background-color: white;
+    text-align: center;
+    position: relative;
+}
+
+.player2cards {
+    display: inline-block;
+    border: 1px solid black;
+    width: 28px;
+    height: 34px;
+    color: black;
+    background-color: white;
+    text-align: center;
+}
+
+.player3cards {
+    display: inline-block;
+    border: 1px solid black;
+    width: 28px;
+    height: 34px;
+    color: black;
+    background-color: white;
+    text-align: center;
 }
 
 
+
+
+.chair2 {
+    font-size: 60px;
+}
+
+
+
+/* for (let i = 0; i < animals.length; i++) {
+        middlecards.push(animals[i].charAt(0));
+    }
+
+    console.log(middlecards); */
+
+/* let animals = ['Hen', 'elephant', 'llama', 'leopard', 'ostrich', 'Whale', 'octopus', 'rabbit', 'lion', 'dog'];
+
+    let secretMessage = animals.map(function (animal) {
+        for (animal = 0; animal <= animals.length - 1; animal++) {
+            middlecards.push(animals[animal].charAt(0));
+        }
+    });
+
+    console.log(middlecards); */
 
 
 

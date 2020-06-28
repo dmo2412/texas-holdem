@@ -20,26 +20,31 @@
         </style>
     
         <h1 class="title">Welcome to Danny's Poker Room</h1>
+    </head>
+    
+    <body class='body'>
+        <!-- <span class='chair2'>🪑</span> -->
+        <div id = 'pokertable'>
+            <div id='player2carddiv'></div>
+            <div id='player3carddiv'></div>
+            <div id='player1carddiv'></div>
+            <div id='flopcard-anchor'></div>
+            <p class="dot" position='absolute'>10</p>
+            <canvas id="myCanvas" width="800" height="300"></canvas>
+        </div>
+        <div id='chipcount'>
+            Chip Count 
+            <header id='chipcountborder'></header>
+        </div>
+        
+        <button id="hands">Deal Cards</button>
+        
+        
+        <button id='betbutton'>Place Bet</button>
+        <button id='fold'>Fold</button>
         <div class='champ'></div>
-</head>
-
-<body class='body'>
-    <div id = 'pokertable'>
-        <div id='player2carddiv'>Tom Dwan</div>
-        <div id='player3carddiv'>Phil Ivey</div>
-        <span class="dot"></span>
-        <div id='player1carddiv'>Me</div>
-        <canvas id="myCanvas"  ></canvas>
-    </div>
-    <div id='chipcount'>
-        Chip Count 
-        <header id='chipcountborder'></header>
-    </div>
-    
-    <button id="hands">Deal Cards</button>
 
     
-    <button id='betbutton'>Place Bet</button>
     
     
     <script src="./dist/main.js"></script>
