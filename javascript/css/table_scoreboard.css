@@ -38,9 +38,10 @@
 }
 
 .champ {
-    color: red;
+    color:tomato;
     text-orientation: upright;
     height: 5px;
-    margin-left: 16%;
+    margin-left: 29%;
     font-size: 30px;
 }
+
