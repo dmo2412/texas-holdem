@@ -1,9 +1,9 @@
-// const axios = require('axios');
-import scoreboard from '../javascript/js/scoreboard';
-import playerChips from '../javascript/js/player_chips';
 
+import scoreboard from '../javascript/js/scoreboard';
+import table from '../javascript/js/table'
+import player_chips from '../javascript/js/player_chips';
 document.addEventListener("DOMContentLoaded", () => {
-    // console.log("this isn't working")
-    playerChips();
-    scoreboard();
+    // scoreboard();
+    table();
+    // player_chips();
 })

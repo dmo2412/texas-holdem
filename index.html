@@ -6,7 +6,7 @@
         <title>Texas Hold'em</title>
         <script src="https://d19vzq90twjlae.cloudfront.net/leaflet-0.6.1/leaflet.js"></script>
         <!-- <script src="./src/js/index.js"></script> -->
-
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
         <script src="https://d3js.org/d3.v3.min.js"></script>
         <script src="https://d3js.org/topojson.v1.min.js"></script>
         <script src="https://d3js.org/d3.v5.js" charset="utf-8"></script>
@@ -23,13 +23,18 @@
     </head>
     
     <body class='body'>
-        <!-- <span class='chair2'>🪑</span> -->
+        <!-- <span class='chair2'></span> -->
+        <!-- <canvas class='player2chips'>10</canvas> -->
+        <!-- <span class="iconify" data-icon="mdi-poker-chip" data-inline="false"></span> -->
+        <!-- <span class="iconify" data-icon="mdi-poker-chip" data-inline="false"></span> -->
+        <canvas class='player2chips'>10</canvas>
+        <canvas class=player3chips>10</canvas>
+        <canvas class="player1chips">10</canvas>
         <div id = 'pokertable'>
             <div id='player2carddiv'></div>
             <div id='player3carddiv'></div>
             <div id='player1carddiv'></div>
             <div id='flopcard-anchor'></div>
-            <p class="dot" position='absolute'>10</p>
             <canvas id="myCanvas" width="800" height="300"></canvas>
         </div>
         <div id='chipcount'>
@@ -41,8 +46,8 @@
         
         
         <button id='betbutton'>Place Bet</button>
+        <div class='winner'></div>
         <button id='fold'>Fold</button>
-        <div class='champ'></div>
 
     
     

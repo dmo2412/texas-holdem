@@ -1,6 +1,21 @@
 const playerChips = () => {
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+        ctx.arc(200, 20, 15, 0, Math.PI * 2);
+        ctx.fillStyle = "tomato";
+        ctx.text = '10';
+        ctx.fill();
+        ctx.closePath();
+        ctx.strokeStyle = "black";
+        ctx.stroke();
+        ctx.font = "2px Georgia";
+        ctx.fillText("Hello World!", 10, 50);
+
+
+
+
         // var x = canvas.width / 2;
         // var y = canvas.height - 30;
         // var x1 = canvas.width / 2;

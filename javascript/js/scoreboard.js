@@ -55,14 +55,6 @@ const scoreboard = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.beginPath();
             cards = [];
-            let deck1 = {};
-            let deck2 = {};
-            let deck3 = {};
-            let deck4 = {};
-            let card;
-            let num;
-            let char;
-
             for (let i = 0; i < values.length; i++) {
                 for (let j = 0; j < suits.length; j++) {
                     let ele = values[i].concat(suits[j]);
@@ -76,16 +68,11 @@ const scoreboard = () => {
                 cards[i] = cards[j];
                 cards[j] = temp;
             };
-        
         if (dealTurn === 0) {
-            dealTurn += 1
+            // dealTurn += 1
             for (let i = 0; i < 2; i++) {
                 player1.holecards.push(cards[0]);
                 player1.cardPool.push(cards[0]);
-                card = cards[0];
-                char = card[0];
-                
-                // debugger
                 cards.shift()
                 player2.holecards.push(cards[0]);
                 player2.cardPool.push(cards[0]);
@@ -94,7 +81,6 @@ const scoreboard = () => {
                 player3.cardPool.push(cards[0]);
                 cards.shift()
             }
-            // let arr = [player1.holecards, player2.holecards, player3.holecards];
 
             d3.select("#player1carddiv").selectAll("p")
                 .data(player1.holecards)
@@ -125,6 +111,9 @@ const scoreboard = () => {
             dealTurn = 0;
             middlecards = [];
             pot.chips = 0;
+            player1.status = true;
+            player2.status = true;
+            player3.status = true;
 
             if (player1.chips < 30) {
                 player1.chips = 100;
@@ -156,9 +145,31 @@ const scoreboard = () => {
         }
     }
 
-    document.getElementById('betbutton').onclick = function placeBet() {
+    document.getElementById("fold").onclick = function foldCards() {
+        if (turn % 3 === 0) {
+            turn += 1
+            player1.status = false;
+            players.shift();
+            player1.holecards = [];
+        } else if (turn % 3 === 1) {
+            turn += 1
+            player2.status === false;
+            const index = players.indexOf(player2);
+            if (index > -1) {
+                players.splice(index, 1);
+            }
+        } else if (turn % 3 === 2) {
+            turn += 1;
+            betTurn += 1;
+            player3.status = false;
+            const index = players.indexOf(player2);
+            if (index > -1) {
+                players.splice(index, 1);
+            }
+        }
+    }
 
-        
+    document.getElementById('betbutton').onclick = function placeBet() {
         if (betTurn === 0) {
             if (turn % 3 === 0) {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -175,7 +186,6 @@ const scoreboard = () => {
                 player1.chips = player1.chips - 10;
             } else if (turn % 3 === 1) {
                 player2.chips = player2.chips - 10;
-                // ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.beginPath();
                 ctx.arc(260, 20, 10, 0, Math.PI * 2);
                 ctx.fillStyle = "yellow";
@@ -357,7 +367,7 @@ const scoreboard = () => {
             // let victor = [champ]
             // champ is a string of the winner's name
             let champion = [{name: champ.name}];
-            d3.select(".champ").selectAll('p')
+            d3.select(".winner").selectAll('p')
             .data(champion)
             .enter()
             .append("p")
