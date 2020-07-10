@@ -1,26 +1,36 @@
-const Hands = require('./hands');
+const Deck = require('./deck');
+const Preflop = require('./preflop');
 
-class Betting {
-    constructor(player1, player2, player3, cards) {
-        this.player1 = player1;
-        this.player2 = player2;
-        this.player3 = player3;
-        this.cards = cards;
-        this.players = [player1, player2, player3];
+export default class Betting {
+    constructor(player1) {
+        this._player1 = player1;
     }
 
-    firstBet() {
-        
+    player1() {
+        console.log(this._player1);
     }
-    
-
 }
 
+// class Person {
 
-module.exports = Betting;
+//     get name() {
+//         return this._name + '!!!'
+//     }
 
+//     set name(newValue) {
+//         this._name = newValue
+//     }
 
+//     constructor(name) {
+//         this._name = name
+//     }
+// }
 
+// const me = new Person('Zach')
+// console.log(me.name)            // Zach!!!
 
+// me.name = 'Jacob'
+// console.log(me.name)            // Jacob!!!
 
-
+// // Of course, _name is not actually private.
+// console.log(me._name)           // Jacob
