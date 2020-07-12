@@ -1,5 +1,5 @@
-const Deck = require('./deck');
-const Preflop = require('./preflop');
+const deck = require('./deck');
+const preflop = require('./preflop');
 
 export default class Betting {
     constructor(player1) {

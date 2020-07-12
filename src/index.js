@@ -13,12 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // shuffle()
     const deal = new Cards();
     const app = new Game();
-    const bet = new Betting();
+    // const bet = new Betting();
     app.createGame();
 
     document.getElementById('hands').onclick = function dealTheCards() {
         deal.dealCards();
-        bet.placeBet;
+        // bet.placeBet();
     }
     
 })

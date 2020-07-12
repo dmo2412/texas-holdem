@@ -1,10 +1,12 @@
 import Deck from './deck';
+import betting from './betting';
 import Betting from './betting';
 
-const deck = require('./deck').default;
+// const deck = require('./deck');
 
 export default class Cards {
     constructor() {
+        this.betting = new Betting();
         this.player1 = {
             name: 'Mike McDermott',
             chips: 1000,
@@ -204,7 +206,7 @@ export default class Cards {
 
     placeBet() {
         // console.log(this.player1)
-        Betting.player1;
+        this.betting.player1();
     }
 }
 
