@@ -1,5 +1,5 @@
 import Deck from './deck';
-import Cards from './preflop';
+import Preflop from './preflop';
 
 const deck = require('./deck');
 const cards = require('./preflop');
@@ -8,7 +8,8 @@ const betting = require('./betting')
 export default class Game {
     constructor() {
         this.deck = new Deck();
-        this.cards = new Cards();
+        this.cards = new Preflop();
+        
     }
 
     createGame() {
