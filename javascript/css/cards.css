@@ -38,6 +38,13 @@
     margin-left: 80%;
     margin-top: 1px;
 }
+#raise {
+    height: 50px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: lightskyblue;
+    border: 3px solid black;
+}
 
 
 #flop {

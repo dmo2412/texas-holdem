@@ -7,18 +7,34 @@ import Deck from '../javascript/js/deck'
 import Cards from '../javascript/js/preflop';
 import Game from '../javascript/js/game';
 import Betting from '../javascript/js/betting';
+import Fold from '../javascript/js/fold'
 // const shuffle = require('shuffle');
 document.addEventListener("DOMContentLoaded", () => {
     // table();
     // shuffle()
     const deal = new Cards();
-    const app = new Game();
+    const game = new Game();
     // const bet = new Betting();
-    app.createGame();
+    game.createGame();
+    window.playerList = [window.player1, window.player2, window.player3]
 
     document.getElementById('hands').onclick = function dealTheCards() {
         deal.dealCards();
         // bet.placeBet();
+    }
+
+    document.getElementById('fold').onclick = function foldYourCards() {
+        const fold = new Fold();
+        fold.removePlayer();
+        window.count += 1;
+    }
+
+    document.getElementById('betbutton').onclick = function placeYourBet() {
+        const bet = new Betting();
+        bet.placeBet();
+        deal.startScoreboard();
+        game.playerTurn();
+        window.count += 1;
     }
     
 })
