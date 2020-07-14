@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const game = new Game();
     // const bet = new Betting();
     game.createGame();
-    
+    window.playerList = [window.player1, window.player2, window.player3]
 
     document.getElementById('hands').onclick = function dealTheCards() {
         deal.dealCards();
