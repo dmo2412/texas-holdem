@@ -17,14 +17,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const game = new Game();
     // const bet = new Betting();
     game.createGame();
-    window.playerList = window.players;
     window.betRound = 0;
     window.betCount = 0;
     window.riverTurn = 0;
     window.lastBet = 0;
 
+    if (window.winner) {
+        game.resetGame();
+        debugger
+    }
+
     document.getElementById('hands').onclick = function dealTheCards() {
         deal.dealCards();
+
 
         // bet.placeBet();
     }
@@ -34,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         fold.removePlayer();
         window.count += 1;
         // window.flopCount += 1;
-        game.fold()
+        game.fold();
         // game.playerTurn();
         // game.resetGame();
     }
@@ -44,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         deal.startScoreboard();
         game.call();
         window.count += 1;
+        
     }
     
 })

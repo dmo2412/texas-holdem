@@ -42,7 +42,7 @@ export default class Cards {
         window.players = [window.player3, window.player1, window.player2];
         window.theData = [window.player1, window.player2, window.player3, window.pot];
         window.deck = new Deck();
-        window.playerList = window.players;
+        window.playerList = [window.player3, window.player1, window.player2];
         this.count = 0;
         window.flopCount = 0;
         window.turnCount = 0;
