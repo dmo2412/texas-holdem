@@ -7,7 +7,8 @@ import Deck from '../javascript/js/deck'
 import Cards from '../javascript/js/preflop';
 import Game from '../javascript/js/game';
 import Betting from '../javascript/js/betting';
-import Fold from '../javascript/js/fold'
+import Fold from '../javascript/js/fold';
+import NextCard from '../javascript/js/nextcard';
 // const shuffle = require('shuffle');
 document.addEventListener("DOMContentLoaded", () => {
     // table();
@@ -16,10 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const game = new Game();
     // const bet = new Betting();
     game.createGame();
-    window.playerList = [window.player1, window.player2, window.player3]
+    window.playerList = window.players;
+    window.betRound = 0;
+    window.betCount = 0;
+    window.riverTurn = 0;
+    window.lastBet = 0;
 
     document.getElementById('hands').onclick = function dealTheCards() {
         deal.dealCards();
+
         // bet.placeBet();
     }
 
@@ -27,13 +33,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const fold = new Fold();
         fold.removePlayer();
         window.count += 1;
+        // window.flopCount += 1;
+        game.fold()
+        // game.playerTurn();
+        // game.resetGame();
     }
 
     document.getElementById('betbutton').onclick = function placeYourBet() {
         const bet = new Betting();
-        bet.placeBet();
         deal.startScoreboard();
-        game.playerTurn();
+        game.call();
         window.count += 1;
     }
     
