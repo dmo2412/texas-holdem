@@ -17,18 +17,46 @@ document.addEventListener("DOMContentLoaded", () => {
     const game = new Game();
     // const bet = new Betting();
     game.createGame();
-    window.betRound = 0;
+    let players = window.players;
+    let playerShift = 0;
+    
     window.betCount = 0;
     window.riverTurn = 0;
     window.lastBet = 0;
 
-    if (window.winner) {
-        game.resetGame();
-        debugger
-    }
-
     document.getElementById('hands').onclick = function dealTheCards() {
+        d3.selectAll(".player3cards").remove();
+        d3.selectAll(".player1cards").remove();
+        d3.selectAll(".player2cards").remove();
+        d3.selectAll(".flopcards").remove();
+        d3.selectAll(".winnerName").remove();
+        let first;
+        for (let i = 0; i < playerShift; i++) {
+            first = players[0];
+            players.shift(1);
+            players.push(first)
+        }
+        window.players = players
+        playerShift += 1;
+
+        for (let i = 0; i < window.players.length; i++) {
+            window.players[i].cardPool = [];
+            window.players[i].holecards = [];
+            window.players[i].currentBet = 0;
+            window.players[i].deadmoney = 0;
+        }
+        window.betRound = -1;
+        window.betRound += 1;
+        window.count = 0;
+        window.flopCount = 0;
+        window.middleCards = [];
+        window.playerTurn = 2;
+        window.turnCount = 0;
+        window.betCount = 0;
+        window.handCount = 0;
+        window.lastBet = 0;
         deal.dealCards();
+    
 
 
         // bet.placeBet();

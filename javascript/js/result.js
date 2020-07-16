@@ -6,9 +6,9 @@ export default class SolveHand {
         let rez;
         if (window.lastBet === window.players.length) {
             for (let i = 0; i < window.players.length; i++) {
-                debugger
+                // debugger
                 rez = Hand.solve(window.players[i].cardPool)
-                debugger
+                // debugger
                 playerHands.push(rez)
             }
             // console.log(playerHands);
@@ -23,6 +23,10 @@ export default class SolveHand {
             window.playerList.shift(1);
             window.playerList.push(first);
             window.players = window.playerList;
+            window.handCount = 0;
+            window.deck.cards = [];
+            window.betRound = -1;
+            window.count = 0;
 
             d3.select("#pokertable").selectAll('h3')
             .data(window.winningPlayerName)

@@ -60,6 +60,9 @@ export default class Game {
         window.playerList.push(player);
         window.players = window.playerList;
         window.deck = new Deck();
+        d3.selectAll(".player3cards").remove();
+        d3.selectAll(".player1cards").remove();
+        d3.selectAll(".player2cards").remove();
         // window.pot.chips = 0;
 
         for (let i = 0; i < window.players.length; i++) {

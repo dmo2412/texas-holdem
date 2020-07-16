@@ -43,7 +43,7 @@ export default class Cards {
         window.theData = [window.player1, window.player2, window.player3, window.pot];
         window.deck = new Deck();
         window.playerList = [window.player3, window.player1, window.player2];
-        this.count = 0;
+        window.handCount = 0;
         window.flopCount = 0;
         window.turnCount = 0;
         window.riverCount = 0;
@@ -62,7 +62,7 @@ export default class Cards {
     }
 
     dealCards() {
-        if (this.count === 0) {
+        if (window.handCount === 0) {
 
             this.setOrder();
             
@@ -102,7 +102,7 @@ export default class Cards {
                 .text(function (d) { return d })
                 .attr("class", 'player3cards')
         }   
-        this.count += 1;
+        window.handCount += 1;
         window.pot.chips = 15;
         // console.log(window.player1)
     }
@@ -115,8 +115,9 @@ export default class Cards {
         let first;
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         // this.ctx.beginPath();
-        var arr = window.players.slice(0,2);
-        if (arr[0] === window.player1) {
+        // var arr = window.players.slice(0,2);
+        debugger
+        if (window.players[0] === window.player1) {
             window.player1.chips -= 5;
             window.player1.deadmoney += 5;
             window.player1.currentBet += 5;
@@ -134,7 +135,7 @@ export default class Cards {
             window.players.shift();
             window.players.push(first);
 
-            window.player2.chips -=10;
+            window.player2.chips -= 10;
             window.player2.deadmoney += 10;
             window.player2.currentBet += 10;
             this.ctx.beginPath();
@@ -149,7 +150,7 @@ export default class Cards {
             first = window.players[0]
             window.players.shift();
             window.players.push(first);
-        } else if (arr[0] === window.player2) {
+        } else if (window.players[0] === window.player2) {
             window.player2.chips -= 5;
             window.player2.deadmoney += 5;
             window.player2.currentBet += 5;
@@ -161,14 +162,15 @@ export default class Cards {
             this.ctx.closePath();
             this.ctx.strokeStyle = "black";
             this.ctx.stroke();
+            
+            window.player3.chips -= 10;
+            window.player3.deadmoney += 10;
+            window.player3.currentBet += 10;
 
             first = window.players[0]
             window.players.shift();
             window.players.push(first);
             
-            window.player3.chips -= 10;
-            window.player3.chips += 10;
-            window.player3.currentBet += 10;
             this.ctx.beginPath();
             this.ctx.arc(270, 20, 10, 0, Math.PI * 2);
             this.ctx.fillStyle = "blue";
@@ -182,7 +184,7 @@ export default class Cards {
             window.players.shift();
             window.players.push(first);
 
-        } else if (arr[0] === window.player3) {
+        } else if (window.players[0] === window.player3) {
             window.player1.chips -= 10;
             window.player1.deadmoney += 10;
             window.player1.currentBet += 10;
