@@ -3,7 +3,7 @@ import preflop from './preflop';
 export default class Fold {
     removePlayer() {
         window.players.shift();
-        this.removeCards()
+        this.removeCards();
     }
 
     removeCards() {
