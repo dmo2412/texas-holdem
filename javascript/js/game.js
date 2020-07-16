@@ -44,7 +44,6 @@ export default class Game {
         this.nextCard.postTurn();
         this.nextCard.postRiver();
         this.solveHand.solveHands();
-        this.resetGame();
     }
 
     fold() {
