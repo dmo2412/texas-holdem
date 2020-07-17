@@ -17,14 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const game = new Game();
     // const bet = new Betting();
     game.createGame();
-    let players = window.players;
     let playerShift = 0;
     
     window.betCount = 0;
     window.riverTurn = 0;
     window.lastBet = 0;
-
+    
     document.getElementById('hands').onclick = function dealTheCards() {
+        const players = [window.player3, window.player1, window.player2];
         d3.selectAll(".player3cards").remove();
         d3.selectAll(".player1cards").remove();
         d3.selectAll(".player2cards").remove();
@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
             first = players[0];
             players.shift(1);
             players.push(first)
+            debugger
         }
         window.players = players
         playerShift += 1;
