@@ -27,7 +27,23 @@ export default class SolveHand {
             window.deck.cards = [];
             window.betRound = -1;
             window.count = 0;
-
+            
+            d3.selectAll(".player2cards").remove();
+            d3.select("#player2carddiv").selectAll("p")
+            .data([window.player2.holecards])
+            .enter()
+            .append('p')
+            .text(function (d) { return d })
+            .attr("class", 'player3cardsrez')
+            
+            d3.selectAll(".player3cards").remove();
+            d3.select("#player3carddiv").selectAll("p")
+                .data([window.player3.holecards])
+                .enter()
+                .append('p')
+                .text(function (d) { return d })
+                .attr("class", 'player3cardsrez')
+            
             d3.select("#pokertable").selectAll('h3')
             .data(window.winningPlayerName)
             .enter()

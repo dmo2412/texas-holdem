@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
     document.getElementById('hands').onclick = function dealTheCards() {
         const players = [window.player3, window.player1, window.player2];
-        d3.selectAll(".player3cards").remove();
+        d3.selectAll(".player3cardsrez").remove();
         d3.selectAll(".player1cards").remove();
-        d3.selectAll(".player2cards").remove();
+        d3.selectAll(".player2cardsrez").remove();
         d3.selectAll(".flopcards").remove();
         d3.selectAll(".winnerName").remove();
         let first;

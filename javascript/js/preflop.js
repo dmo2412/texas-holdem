@@ -81,22 +81,43 @@ export default class Cards {
                 window.players[2].cardPool.push(window.deck.cards[0]);
                 window.deck.cards.shift();
             }
+            window.player1Cards = [];
+            // let playercard = window.player1.holecards
+            let card1;
+            let cardVal;
+            for (let i = 0; i < 2; i++) {
+                card1 = window.player1.holecards[i];
+                if (card1[1] === 'd') {
+                    cardVal = card1[0] + '🔹'
+                    window.player1Cards.push(cardVal)
+                } else if (card1[1] === 's') {
+                    cardVal = card1[0] + '♠️'
+                    window.player1Cards.push(cardVal)
+                } else if (card1[1] === 'h') {
+                    cardVal = card1[0] + '❤️'
+                    window.player1Cards.push(cardVal)
+                } else if (card1[1] === 'c') {
+                    cardVal = card1[0] + '🍀'
+                    window.player1Cards.push(cardVal)
+                }
+            }
+
             d3.select("#player1carddiv").selectAll("p")
-                .data(window.player1.holecards)
+                .data(window.player1Cards)
                 .enter()
                 .append('p')
                 .text(function (d) { return d })
                 .attr("class", 'player1cards')
 
             d3.select("#player2carddiv").selectAll("p")
-                .data(window.player2.holecards)
+                .data(['🎴🎴'])
                 .enter()
                 .append('p')
                 .text(function (d) { return d })
                 .attr("class", 'player2cards')
 
             d3.select("#player3carddiv").selectAll("p")
-                .data(window.player3.holecards)
+                .data(['🎴🎴'])
                 .enter()
                 .append('p')
                 .text(function (d) { return d })

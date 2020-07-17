@@ -106,7 +106,7 @@
 .flopcards {
     /* margin-left: 10%; */
     border: 1px solid black;
-    width: 28px;
+    width: 32px;
     height: 34px;
     color: black;
     background-color: white;
@@ -166,7 +166,18 @@
 .player1cards {
     display: inline-block;
     border: 1px solid black;
-    width: 28px;
+    width: 32px;
+    height: 34px;
+    color: black;
+    background-color: white;
+    text-align: center;
+    position: relative;
+}
+
+.player3cardsrez {
+    display: inline-block;
+    border: 1px solid black;
+    width: 32px;
     height: 34px;
     color: black;
     background-color: white;
@@ -176,27 +187,27 @@
 
 .player2cards {
     display: inline-block;
-    border: 1px solid black;
-    width: 28px;
-    height: 34px;
-    color: black;
-    background-color: white;
+    /* border: 1px solid black; */
+    /* width: 32px;
+    height: 34px; */
+    /* color: black; */
+    /* background-color: white; */
+    font-size: 38px;
     text-align: center;
+    -webkit-transform: rotate(180deg);
 }
 
 .player3cards {
     display: inline-block;
-    border: 1px solid black;
-    width: 28px;
-    height: 34px;
-    color: black;
-    background-color: white;
     text-align: center;
+    font-size: 38px;
+    -webkit-transform: rotate(-90deg);
 }
+
 
 .winnerName {
     margin-top: -37%;
-    margin-left: 27%;
+    margin-left: 23%;
     color:black;
 }
 

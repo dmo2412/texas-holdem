@@ -20,9 +20,38 @@ export default class NextCard {
             
             window.flopCount += 1;
             window.numPlayers = window.players.length;
+            window.styledCards = []
+            // ♢
+            // ♠
+            // ♡
+            // ♣
+            let card;
+            for (let i = 0; i < window.middleCards.length; i++) {
+                if (window.middleCards[i][1] === 'd') {
+                    card = window.middleCards[i];
+                    card = card[0] + '🔹';
+                    // card.style.color = "blue"
+                    window.styledCards.push(card);
+                } else if (window.middleCards[i][1] === 's') {
+                    card = window.middleCards[i];
+                    card = card[0] + '♠️';
+                    // card.style.color = "black"
+                    window.styledCards.push(card);
+                } else if (window.middleCards[i][1] === 'h') {
+                    card = window.middleCards[i];
+                    card = card[0] + '❤️';
+                    // card.style.color = "red"
+                    window.styledCards.push(card);
+                } else if (window.middleCards[i][1]=== 'c') {
+                    card = window.middleCards[i];
+                    card = card[0] + '🍀';
+                    // card.style.color = "green"
+                    window.styledCards.push(card);
+                }
+            }
             
             d3.select("#flopcard-anchor").selectAll("p")
-                .data(window.middleCards)
+                .data(window.styledCards)
                 .enter()
                 .append("p")
                 .text(function (d) { return d })
@@ -32,7 +61,32 @@ export default class NextCard {
 
     postTurn() {
         if (window.betCount === window.players.length) {
-            let c = window.deck.cards[0]
+            let card = window.deck.cards[0];
+            debugger
+            let c = card;
+            if (card[1] === 'd') {
+                // card = window.middleCards[i];
+                card = card[0] + '🔹';
+                debugger
+                // card.style.color = "blue"
+                window.styledCards.push(card);
+            } else if (card[1] === 's') {
+                // card = window.middleCards[i];
+                card = card[0] + '♠️';
+                // card.style.color = "black"
+                window.styledCards.push(card);
+            } else if (card[1] === 'h') {
+                // card = window.middleCards[i];
+                card = card[0] + '❤️';
+                // card.style.color = "red"
+                window.styledCards.push(card);
+            } else if (card[1] === 'c') {
+                // card = window.middleCards[i];
+                card = card[0] + '🍀';
+                // card.style.color = "green"
+                window.styledCards.push(card);
+            }
+
             window.playerTurn = 2;
             window.middleCards[3] = c;
             
@@ -40,9 +94,9 @@ export default class NextCard {
                 window.players[i].cardPool.push(c)
             }
             window.deck.cards = window.deck.cards.slice(1);
-            
+            debugger
             d3.select("#flopcard-anchor").selectAll("p")
-                .data(window.middleCards)
+                .data(window.styledCards)
                 .enter()
                 .append("p")
                 .text(function (d) { return d })
@@ -61,15 +115,41 @@ export default class NextCard {
     postRiver() {
         if (window.turnCount === window.players.length) {
             let c = window.deck.cards[0];
+            let card = window.deck.cards[0];
+            debugger
             window.playerTurn = 3;
             window.middleCards[4] = c;
+            if (card[1] === 'd') {
+                // card = window.middleCards[i];
+                card = card[0] + '🔹';
+                debugger
+                // card.style.color = "blue"
+                window.styledCards.push(card);
+            } else if (card[1] === 's') {
+                // card = window.middleCards[i];
+                card = card[0] + '♠️';
+                // card.style.color = "black"
+                window.styledCards.push(card);
+            } else if (card[1] === 'h') {
+                // card = window.middleCards[i];
+                card = card[0] + '❤️';
+                // card.style.color = "red"
+                window.styledCards.push(card);
+            } else if (card[1] === 'c') {
+                // card = window.middleCards[i];
+                // let symbol = '🍀'
+                // symbol.style.fontSize = '1px'
+                card = card[0] + '☘️';
+                // card.style.color = "green"
+                window.styledCards.push(card);
+            }
 
             for (let i = 0; i < window.players.length; i++) {
                 window.players[i].cardPool.push(c)
             }
             window.deck.cards = window.deck.cards.slice(1);
             d3.select("#flopcard-anchor").selectAll("p")
-                .data(window.middleCards)
+                .data(window.styledCards)
                 .enter()
                 .append("p")
                 .text(function (d) { return d })
