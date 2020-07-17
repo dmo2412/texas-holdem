@@ -207,6 +207,49 @@
     font-size: 60px;
 }
 
+.mcdermott {
+    height: 20%;
+    width: 8%;
+    position: fixed;
+    margin-top: -21%;
+    margin-left: 2%;
+}
+
+.MikeM {
+    margin-top: -23%;
+    position: fixed;
+    margin-left: 2%;
+    font-weight: bold;
+}
+
+.dwan {
+    height: 12%;
+    width: 8%;
+    position: fixed;
+    margin-left: 33%;
+}
+
+.durr {
+    position: fixed;
+    margin-left: 34.5%;
+    padding-top: 7%;
+    font-weight: bold;
+}
+
+.ivey {
+    position: fixed;
+    height: 21%;
+    width: 9%;
+    margin-top: 10%;
+    margin-left: 50%;
+}
+.phil {
+    position: fixed;
+    font-weight: bold;
+    margin-left: 52%;
+    margin-top: 8%; 
+}
+
 
 
 /* for (let i = 0; i < animals.length; i++) {
