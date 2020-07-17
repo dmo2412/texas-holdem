@@ -138,6 +138,7 @@ export default class NextCard {
                 // let symbol = '🍀'
                 // symbol.style.fontSize = '1px'
                 card = card[0] + '☘️';
+
                 // card.style.color = "green"
                 window.styledCards.push(card);
             }
