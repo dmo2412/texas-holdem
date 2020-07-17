@@ -22,12 +22,23 @@ document.addEventListener("DOMContentLoaded", () => {
     window.betCount = 0;
     window.riverTurn = 0;
     window.lastBet = 0;
+    // var canvas = document.getElementByClassName("player2chips");
+    // var ctx = canvas.getContext("2d");
+    // ctx.font = "30px Arial";
+    // ctx.strokeText(window.player2.chips, 10, 50);
+    document.getElementById('player2chips').innerHTML = window.player2.chips;
+    document.getElementById('player3chips').innerHTML = window.player3.chips;
+    document.getElementById('player1chips').innerHTML = window.player1.chips;
+
     
     document.getElementById('hands').onclick = function dealTheCards() {
+        // document.getElementById('player2chips').innerHTML = window.player2.chips;
+        // document.getElementById('player3chips').innerHTML = window.player3.chips;
+        // document.getElementById('player1chips').innerHTML = window.player1.chips;
         const players = [window.player3, window.player1, window.player2];
-        d3.selectAll(".player3cards").remove();
+        d3.selectAll(".player3cardsrez").remove();
         d3.selectAll(".player1cards").remove();
-        d3.selectAll(".player2cards").remove();
+        d3.selectAll(".player2cardsrez").remove();
         d3.selectAll(".flopcards").remove();
         d3.selectAll(".winnerName").remove();
         let first;
@@ -35,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
             first = players[0];
             players.shift(1);
             players.push(first)
-            debugger
         }
         window.players = players
         playerShift += 1;
@@ -57,7 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
         window.handCount = 0;
         window.lastBet = 0;
         deal.dealCards();
-    
+        // document.getElementByClassName('player2chips').innerHTML = 'window.player2.chips';
+        document.getElementById('player2chips').innerHTML = window.player2.chips;
+        document.getElementById('player3chips').innerHTML = window.player3.chips;
+        document.getElementById('player1chips').innerHTML = window.player1.chips;
 
 
         // bet.placeBet();
@@ -78,6 +91,9 @@ document.addEventListener("DOMContentLoaded", () => {
         deal.startScoreboard();
         game.call();
         window.count += 1;
+        document.getElementById('player2chips').innerHTML = window.player2.chips;
+        document.getElementById('player3chips').innerHTML = window.player3.chips;
+        document.getElementById('player1chips').innerHTML = window.player1.chips;
         
     }
     
