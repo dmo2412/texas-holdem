@@ -115,29 +115,31 @@
 }
 
 
-.player1chips {
+#player1chips {
   position: fixed;
-  height: 25px;
-  width: 25px;
+  height: 35px;
+  width: 35px;
   background-color:tomato;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 3px dashed white;
   display: inline-block;
   text-align: center;
   margin-top: 30%;
   margin-left: 18%;
+  line-height: 35px;
 }
-.player2chips {
+#player2chips {
   position: fixed;
-  height: 25px;
-  width: 25px;
+  height: 35px;
+  width: 35px;
   background-color:tomato;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 3px dashed white;
   display: inline-block;
   text-align: center;
   margin-top: 14%;
   margin-left: 33%;
+  line-height: 35px;
 }
 
 /* .iconify {
@@ -150,17 +152,18 @@
     width: 25px; */
 /* } */
 
-.player3chips {
+#player3chips {
   position: fixed;
-  height: 25px;
-  width: 25px;
+  height: 35px;
+  width: 35px;
   background-color:tomato;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 3px dashed white;
   display: inline-block;
   text-align: center;
   margin-top: 30%;
   margin-left: 56%;
+  line-height: 35px;
 }
 
 .player1cards {
@@ -182,7 +185,7 @@
     color: black;
     background-color: white;
     text-align: center;
-    position: relative;
+    /* position: relative; */
 }
 
 .player2cards {

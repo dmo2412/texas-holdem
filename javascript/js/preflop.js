@@ -137,7 +137,6 @@ export default class Cards {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         // this.ctx.beginPath();
         // var arr = window.players.slice(0,2);
-        debugger
         if (window.players[0] === window.player1) {
             window.player1.chips -= 5;
             window.player1.deadmoney += 5;
@@ -161,7 +160,7 @@ export default class Cards {
             window.player2.currentBet += 10;
             this.ctx.beginPath();
             this.ctx.arc(260, 20, 10, 0, Math.PI * 2);
-            this.ctx.fillStyle = "yellow";
+            this.ctx.fillStyle = "tomato";
             this.ctx.text = '10';
             this.ctx.fill();
             this.ctx.closePath();
@@ -177,7 +176,7 @@ export default class Cards {
             window.player2.currentBet += 5;
             this.ctx.beginPath();
             this.ctx.arc(260, 20, 10, 0, Math.PI * 2);
-            this.ctx.fillStyle = "yellow";
+            this.ctx.fillStyle = "tomato";
             this.ctx.text = '10';
             this.ctx.fill();
             this.ctx.closePath();
@@ -194,7 +193,7 @@ export default class Cards {
             
             this.ctx.beginPath();
             this.ctx.arc(270, 20, 10, 0, Math.PI * 2);
-            this.ctx.fillStyle = "blue";
+            this.ctx.fillStyle = "tomato";
             this.ctx.text = '10';
             this.ctx.fill();
             this.ctx.closePath();
@@ -228,7 +227,7 @@ export default class Cards {
 
             this.ctx.beginPath();
             this.ctx.arc(270, 20, 10, 0, Math.PI * 2);
-            this.ctx.fillStyle = "blue";
+            this.ctx.fillStyle = "tomato";
             this.ctx.text = '10';
             this.ctx.fill();
             this.ctx.closePath();

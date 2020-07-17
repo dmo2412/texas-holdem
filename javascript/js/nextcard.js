@@ -62,12 +62,11 @@ export default class NextCard {
     postTurn() {
         if (window.betCount === window.players.length) {
             let card = window.deck.cards[0];
-            debugger
             let c = card;
             if (card[1] === 'd') {
                 // card = window.middleCards[i];
                 card = card[0] + '🔹';
-                debugger
+                
                 // card.style.color = "blue"
                 window.styledCards.push(card);
             } else if (card[1] === 's') {
@@ -94,7 +93,7 @@ export default class NextCard {
                 window.players[i].cardPool.push(c)
             }
             window.deck.cards = window.deck.cards.slice(1);
-            debugger
+            
             d3.select("#flopcard-anchor").selectAll("p")
                 .data(window.styledCards)
                 .enter()
@@ -116,13 +115,12 @@ export default class NextCard {
         if (window.turnCount === window.players.length) {
             let c = window.deck.cards[0];
             let card = window.deck.cards[0];
-            debugger
+            
             window.playerTurn = 3;
             window.middleCards[4] = c;
             if (card[1] === 'd') {
                 // card = window.middleCards[i];
                 card = card[0] + '🔹';
-                debugger
                 // card.style.color = "blue"
                 window.styledCards.push(card);
             } else if (card[1] === 's') {

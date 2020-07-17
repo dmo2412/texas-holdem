@@ -27,10 +27,54 @@ export default class SolveHand {
             window.deck.cards = [];
             window.betRound = -1;
             window.count = 0;
-            
+            let player2cards = [];
+            let player3cards = [];
+            let card1;
+            let card2;
+            let card;
+            for (let i = 0; i < 2; i++) {
+                card1 = window.player2.holecards[i];
+                debugger
+                if (card1[1] === 'd') {
+                    card = card1[0] + '🔹'
+                    player2cards.push(card)
+                } else if (card1[1] === 's') {
+                    card = card1[0] + '♠️'
+                    player2cards.push(card)
+                } else if (card1[1] === 'h') {
+                    card = card1[0] + '❤️'
+                    player2cards.push(card)
+                } else if (card1[1] === 'c') {
+                    debugger
+                    card = card1[0] + '🍀'
+                    debugger
+                    player2cards.push(card)
+                }
+                debugger
+            }
+
+            for (let i = 0; i < 2; i++) {
+                card2 = window.player3.holecards[i];
+                if (card2[1] === 'd') {
+                    card = card2[0] + '🔹'
+                    player3cards.push(card)
+                } else if (card2[1] === 's') {
+                    card = card2[0] + '♠️'
+                    player3cards.push(card)
+                } else if (card2[1] === 'h') {
+                    card = card2[0] + '❤️'
+                    player3cards.push(card)
+                } else if (card2[1] === 'c') {
+                    debugger
+                    card = card2[0] + '🍀'
+                    debugger
+                    player3cards.push(card)
+                }
+                debugger
+            }
             d3.selectAll(".player2cards").remove();
             d3.select("#player2carddiv").selectAll("p")
-            .data([window.player2.holecards])
+            .data(player2cards)
             .enter()
             .append('p')
             .text(function (d) { return d })
@@ -38,7 +82,7 @@ export default class SolveHand {
             
             d3.selectAll(".player3cards").remove();
             d3.select("#player3carddiv").selectAll("p")
-                .data([window.player3.holecards])
+                .data(player3cards)
                 .enter()
                 .append('p')
                 .text(function (d) { return d })
