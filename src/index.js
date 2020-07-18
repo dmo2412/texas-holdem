@@ -1,18 +1,13 @@
 
-// import scoreboard from '../javascript/js-old/scoreboard';
-// import table from '../javascript/js-old/table'
-// import player_chips from '../javascript/js-old/player_chips';
-// import shuffle from '../javascript/js/shuffle'
+
 import Deck from '../javascript/js/deck'
 import Cards from '../javascript/js/preflop';
 import Game from '../javascript/js/game';
 import Betting from '../javascript/js/betting';
 import Fold from '../javascript/js/fold';
 import NextCard from '../javascript/js/nextcard';
-// const shuffle = require('shuffle');
 document.addEventListener("DOMContentLoaded", () => {
-    // table();
-    // shuffle()
+    
     const deal = new Cards();
     const game = new Game();
     // const bet = new Betting();
@@ -22,19 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
     window.betCount = 0;
     window.riverTurn = 0;
     window.lastBet = 0;
-    // var canvas = document.getElementByClassName("player2chips");
-    // var ctx = canvas.getContext("2d");
-    // ctx.font = "30px Arial";
-    // ctx.strokeText(window.player2.chips, 10, 50);
+    
     document.getElementById('player2chips').innerHTML = window.player2.chips;
     document.getElementById('player3chips').innerHTML = window.player3.chips;
     document.getElementById('player1chips').innerHTML = window.player1.chips;
 
     
     document.getElementById('hands').onclick = function dealTheCards() {
-        // document.getElementById('player2chips').innerHTML = window.player2.chips;
-        // document.getElementById('player3chips').innerHTML = window.player3.chips;
-        // document.getElementById('player1chips').innerHTML = window.player1.chips;
         const players = [window.player3, window.player1, window.player2];
         d3.selectAll(".player3cardsrez").remove();
         d3.selectAll(".player1cards").remove();
