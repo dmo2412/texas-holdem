@@ -4,7 +4,7 @@ export default class SolveHand {
         let playerHands = [];
         
 
-        if (window.betRound === 5 || window.players.length === 2) {
+        if (window.betRound === 5) {
             let rez1 = Hand.solve(window.player1.cardPool);
             playerHands.push(rez1);
             let rez2 = Hand.solve(window.player2.cardPool);
@@ -38,6 +38,40 @@ export default class SolveHand {
                     player2cards.push(card)
                 }
             }
+            // window.dealCount = 0;
+            // window.betRound = 0;
+            // window.count = 0;
+            // window.firstBet = 0;
+            // window.turnCount = 0;
+            // window.flopCount = 0;
+            // window.turnBetCount = 0;
+            // window.riverBetCount = 0;
+            // window.middleCards = [];
+            // window.styledCards = [];
+            // window.player1.holecards = [];
+            // window.player2.holecards = [];
+            // window.player1.cardPool = [];
+            // window.player2.cardPool = [];
+            // window.deck.cards = [];
+            
+
+            
+            d3.selectAll(".player2cards").remove();
+            d3.select("#player2carddiv").selectAll("p")
+            .data(player2cards)
+            .enter()
+            .append('p')
+            .text(function (d) { return d})
+            .attr("class", 'player2cardsrez')
+
+            d3.select("#pokertable").selectAll('h3')
+                .data(window.winningPlayerName)
+                .enter()
+                .append("h3")
+                .text(function (d) { return d + " wins pot with " + window.winner[0].descr })
+                .attr("class", "winnerName")
+
+
             window.dealCount = 0;
             window.betRound = 0;
             window.count = 0;
@@ -53,24 +87,7 @@ export default class SolveHand {
             window.player1.cardPool = [];
             window.player2.cardPool = [];
             window.deck.cards = [];
-            
-
-
-
-            d3.selectAll(".player2cards").remove();
-            d3.select("player2carddiv").selectAll("p")
-            .data(player2cards)
-            .enter()
-            .append('p')
-            .text(function (d) { return d})
-            .attr("class", 'player2cardsrez')
-
-            d3.select("#pokertable").selectAll('h3')
-                .data(window.winningPlayerName)
-                .enter()
-                .append("h3")
-                .text(function (d) { return d + " wins pot with " + window.winner[0].descr })
-                .attr("class", "winnerName")
+            player2cards = [];
 
 
         }

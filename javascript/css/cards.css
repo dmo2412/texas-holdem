@@ -191,7 +191,14 @@
     position: relative;
 }
 
-/* .player3cardsrez {
+.player2cards {
+    display: inline-block;
+    text-align: center;
+    font-size: 38px;
+    -webkit-transform: rotate(-90deg);
+}
+
+.player2cardsrez {
     display: inline-block;
     border: 1px solid black;
     width: 32px;
@@ -199,16 +206,7 @@
     color: black;
     background-color: white;
     text-align: center;
-    /* position: relative; */
- 
-
-
-
-.player2cards {
-    display: inline-block;
-    text-align: center;
-    font-size: 38px;
-    -webkit-transform: rotate(-90deg);
+    position: relative;
 }
 
 
