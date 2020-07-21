@@ -4,7 +4,7 @@ export default class SolveHand {
         let playerHands = [];
         
 
-        if (window.betRound === 5) {
+        if (window.betRound === 5 || window.players.length === 2) {
             let rez1 = Hand.solve(window.player1.cardPool);
             playerHands.push(rez1);
             let rez2 = Hand.solve(window.player2.cardPool);
@@ -52,6 +52,8 @@ export default class SolveHand {
             window.player2.holecards = [];
             window.player1.cardPool = [];
             window.player2.cardPool = [];
+            window.deck.cards = [];
+            
 
 
 
@@ -73,6 +75,29 @@ export default class SolveHand {
 
         }
 
+    }
+
+    resetHand() {
+        if (window.players.length === 1) {
+            d3.selectAll(".player2cards").remove();
+            window.dealCount = 0;
+            window.betRound = 0;
+            window.count = 0;
+            window.firstBet = 0;
+            window.turnCount = 0;
+            window.flopCount = 0;
+            window.turnBetCount = 0;
+            window.riverBetCount = 0;
+            window.middleCards = [];
+            window.styledCards = [];
+            window.player1.holecards = [];
+            window.player2.holecards = [];
+            window.player1.cardPool = [];
+            window.player2.cardPool = [];
+            window.deck.cards = [];
+            window.players[0].chips += window.pot.chips;
+            window.pot.chips = 0;
+        }
     }
 
     setCardPool() {

@@ -71,4 +71,12 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('player1chips').innerHTML = window.player1.chips;
     }
 
+    document.getElementById('fold').onclick = function foldCards() {
+        d3.selectAll(".player1cards").remove();
+        d3.selectAll('.player2cards').remove();
+        game.fold();
+        
+        // d3.selectAll(".player2cardsrez").remove();
+    }
+
 })
