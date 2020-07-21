@@ -20,8 +20,8 @@
         </style>
     
         <h1 class="title">Welcome to Danny's Poker Room</h1>
-        <img src="javascript/img/durr.jpg" class='dwan'>
-        <p class='durr'>Tom Dwan</p>
+        <!-- <img src="javascript/img/durr.jpg" class='dwan'>
+        <p class='durr'>Tom Dwan</p> -->
     </head>
     
     <body class='body'>
@@ -30,19 +30,21 @@
         <!-- <span class="iconify" data-icon="mdi-poker-chip" data-inline="false"></span> -->
         <!-- <span class="iconify" data-icon="mdi-poker-chip" data-inline="false"></span> -->
         <p id='player2chips'></p>
-        <p id=player3chips></p>
+        <!-- <p id=player3chips></p> -->
         <p id="player1chips"></p>
         <div id = 'pokertable'>
             <p class='phil'>Phil Ivey</p>
             <img src="javascript/img/ivey.jpg" class='ivey'>
+            <!-- <div id='player2carddiv'></div> -->
             <div id='player2carddiv'></div>
-            <div id='player3carddiv'></div>
             <div id='player1carddiv'></div>
             <div id='flopcard-anchor'></div>
             <canvas id="myCanvas" width="800" height="300"></canvas>
         </div>
         <img src="javascript/img/mcdermott.jpg" class='mcdermott'>
         <p class='MikeM'>Mike Mcdermott</p>
+        <p id='currBetM'></p>
+        <p id='currBetP'></p>
         <div id='chipcount'>
             Chip Count 
             <header id='chipcountborder'></header>
@@ -50,10 +52,13 @@
         <button id="hands">Deal Cards</button>
         
         
-        <button id='betbutton'>Place Bet</button>
+        <button id='call'>Call</button>
         <div class='winner'></div>
         <button id='fold'>Fold</button>
-        <button id='raise'>Raise</button>
+        <button id='check'>Check</button>
+        <button id='raise2x'>Raise to 20</button>
+        <!-- <button id='potraise'>Pot Raise</button> -->
+
 
     
     
