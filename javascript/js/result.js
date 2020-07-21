@@ -28,7 +28,6 @@ export default class SolveHand {
             let card;
             for (let i = 0; i < 2; i++) {
                 card1 = window.player2.holecards[i];
-                debugger
                 if (card1[1] === 'd') {
                     card = card1[0] + '🔹'
                     player2cards.push(card)
@@ -39,12 +38,9 @@ export default class SolveHand {
                     card = card1[0] + '❤️'
                     player2cards.push(card)
                 } else if (card1[1] === 'c') {
-                    debugger
                     card = card1[0] + '🍀'
-                    debugger
                     player2cards.push(card)
                 }
-                debugger
             }
 
             

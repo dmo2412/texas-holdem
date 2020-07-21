@@ -6,7 +6,7 @@ export default class NextCard {
 
     postFlop() {
         if (window.turnCount === 1 && window.player1.currentBet === window.player2.currentBet) {
-            debugger
+            
             let c = window.deck.cards.slice(0,3);
             window.middleCards = window.middleCards.concat(c);
         
@@ -96,7 +96,7 @@ export default class NextCard {
 
     postRiver() {
         if (window.betRound === 3 && window.players[0].currentBet === window.players[1].currentBet && window.turnCount === 4) {
-            debugger
+            
             // window.deck.cards.slice(1);
             let c = window.deck.cards[1];
             let card = window.deck.cards[1];

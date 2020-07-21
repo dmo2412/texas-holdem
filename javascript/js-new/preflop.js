@@ -42,7 +42,6 @@ export default class Preflop {
         this.setOrder();
         this.placeBlinds();
         window.deck.createCards();
-        // debugger
         for (let i = 0; i < 2; i++) {
             window.players[0].holecards.push(window.deck.cards[0]);
             window.players[0].cardPool.push(window.deck.cards[0]);
