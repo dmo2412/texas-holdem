@@ -16,14 +16,6 @@ export default class Cards {
             status: true
         }
         this.player2 = {
-            name: 'Tom Dwan',
-            chips: 1000,
-            cardPool: [],
-            holecards: [],
-            showCards: {},
-            status: true
-        }
-        this.player3 = {
             name: 'Phil Ivey',
             chips: 1000,
             cardPool: [],
@@ -31,6 +23,14 @@ export default class Cards {
             showCards: {},
             status: true
         }
+        // this.player3 = {
+        //     name: 'Phil Ivey',
+        //     chips: 1000,
+        //     cardPool: [],
+        //     holecards: [],
+        //     showCards: {},
+        //     status: true
+        // }
         this.pot = { name: 'Pot', chips: 0 }
         this.players = [this.player3, this.player1, this.player2];
         this.theData = [this.player1, this.player2, this.player3, this.pot];

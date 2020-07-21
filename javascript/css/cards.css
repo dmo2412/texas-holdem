@@ -28,6 +28,7 @@
     border-radius: 20px;
     background-color: lightskyblue;
     border: 3px solid black;
+    margin-top: 1%;
 }
 #fold {
     height: 50px;
@@ -38,7 +39,32 @@
     margin-left: 80%;
     margin-top: 1px;
 }
-#raise {
+#check {
+    height: 50px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: lightskyblue;
+    border: 3px solid black;
+}
+#call {
+    height: 50px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: lightskyblue;
+    border: 3px solid black;
+}
+
+#raise2x {
+    height: 50px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: lightskyblue;
+    border: 3px solid black;
+    margin-left: 83.5%;
+    margin-top: 1px;
+}
+
+#potraise {
     height: 50px;
     width: 100px;
     border-radius: 20px;
@@ -83,21 +109,21 @@
 
 #player1carddiv {
     margin-left: 5%;
-    margin-top: -5%;
+    margin-top: -6%;
     /* margin-bottom: 5%; */
     /* color: white; */
     /* width: 10px; */
 }
 
 #player2carddiv {
-    margin-left: 46%;
-    margin-top: 1%;
+    margin-left: 82%;
+    margin-top: 25%;
 }
 
-#player3carddiv {
+/* #player3carddiv {
     margin-left: 88%;
     margin-top: 18%;
-}
+} */
 
 #flopcard-anchor {
     margin-left: 40%;
@@ -128,19 +154,7 @@
   margin-left: 18%;
   line-height: 35px;
 }
-#player2chips {
-  position: fixed;
-  height: 35px;
-  width: 35px;
-  background-color:tomato;
-  border-radius: 50%;
-  border: 3px dashed white;
-  display: inline-block;
-  text-align: center;
-  margin-top: 14%;
-  margin-left: 33%;
-  line-height: 35px;
-}
+
 
 /* .iconify {
     background: url('https://api.iconify.design/mdi-poker-chip.svg') no-repeat center center / contain;
@@ -152,7 +166,7 @@
     width: 25px; */
 /* } */
 
-#player3chips {
+#player2chips {
   position: fixed;
   height: 35px;
   width: 35px;
@@ -177,7 +191,7 @@
     position: relative;
 }
 
-.player3cardsrez {
+/* .player3cardsrez {
     display: inline-block;
     border: 1px solid black;
     width: 32px;
@@ -186,21 +200,11 @@
     background-color: white;
     text-align: center;
     /* position: relative; */
-}
+ 
+
+
 
 .player2cards {
-    display: inline-block;
-    /* border: 1px solid black; */
-    /* width: 32px;
-    height: 34px; */
-    /* color: black; */
-    /* background-color: white; */
-    font-size: 38px;
-    text-align: center;
-    -webkit-transform: rotate(180deg);
-}
-
-.player3cards {
     display: inline-block;
     text-align: center;
     font-size: 38px;
@@ -263,6 +267,8 @@
     margin-left: 52%;
     margin-top: 8%; 
 }
+
+
 
 
 
