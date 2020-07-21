@@ -22,12 +22,6 @@ export default class Game {
 
     createGame() {
         this.cards.startScoreboard();
-        // this.cards.placeBet();
-        // this.cards.dealCards();
-        // this.cards.setBlinds();
-        // debugger
-        // this.deck.retainCards();
-        // debugger
     }
     
     call() {

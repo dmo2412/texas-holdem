@@ -5,6 +5,7 @@ import Check from './check';
 import NextCard from './nextcard';
 import Raise from './raise';
 import SolveHand from './result';
+import Fold from './fold';
 
 const deck = require('./deck')
 const cards = require('./preflop');
@@ -19,6 +20,7 @@ export default class Game {
         this.nextCard = new NextCard();
         this.raising = new Raise();
         this.solve = new SolveHand();
+        this.folding = new Fold();
     }
 
     createGame() {
@@ -54,6 +56,15 @@ export default class Game {
         this.raising.postflopRaise();
         this.raising.postTurnRaise();
         this.raising.postRiverRaise();
+        this.cards.startScoreboard();
+    }
+
+    fold() {
+        let first = window.players[0];
+        window.players.shift()
+        this.solve.resetHand();
+        this.solve.solveHands();
+        window.players.push(first)
         this.cards.startScoreboard();
     }
 }
