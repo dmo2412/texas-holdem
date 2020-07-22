@@ -25,10 +25,10 @@ export default class Raise {
 
     postflopRaise() {
         if (window.betRound === 1 && window.players[1].currentBet === 0) {
-            window.players[0].chips -= 10;
-            window.pot.chips += 10;
-            window.players[0].deadmoney += 10;
-            window.players[0].currentBet = 10;
+            window.players[0].chips -= 20;
+            window.pot.chips += 20;
+            window.players[0].deadmoney += 20;
+            window.players[0].currentBet = 20;
             let first = window.players[0];
             window.players.shift();
             window.players.push(first);
@@ -45,10 +45,10 @@ export default class Raise {
 
     postTurnRaise() {
         if (window.betRound === 3 && window.players[1].currentBet === 0) {
-            window.players[0].chips -= 10;
-            window.pot.chips += 10;
-            window.players[0].deadmoney += 10;
-            window.players[0].currentBet = 10;
+            window.players[0].chips -= 20;
+            window.pot.chips += 20;
+            window.players[0].deadmoney += 20;
+            window.players[0].currentBet = 20;
             let first = window.players[0];
             window.players.shift();
             window.players.push(first);
@@ -66,10 +66,10 @@ export default class Raise {
 
     postRiverRaise() {
         if (window.betRound === 4 && window.players[1].currentBet === 0) {
-            window.players[0].chips -= 10;
-            window.pot.chips += 10;
-            window.players[0].deadmoney += 10;
-            window.players[0].currentBet = 10;
+            window.players[0].chips -= 20;
+            window.pot.chips += 20;
+            window.players[0].deadmoney += 20;
+            window.players[0].currentBet = 20;
             let first = window.players[0];
             window.players.shift();
             window.players.push(first);
