@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById('hands').onclick = function dealTheCards() {
         const players = [window.player1, window.player2];
+        document.getElementById('whos-turn').innerHTML = window.players[1].name + "'s turn"
         
         d3.selectAll(".player1cards").remove();
         d3.selectAll(".player2cardsrez").remove();
@@ -51,16 +52,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     document.getElementById('call').onclick = function callBet() {
+        document.getElementById('whos-turn').innerHTML = window.players[1].name + "'s turn"
         game.call();
         document.getElementById('player2chips').innerHTML = window.player2.chips;
         document.getElementById('player1chips').innerHTML = window.player1.chips;
     }
 
     document.getElementById('check').onclick = function checkTurn() {
+        document.getElementById('whos-turn').innerHTML = window.players[1].name + "'s turn"
         game.check();
     }
 
     document.getElementById('raise2x').onclick = function raiseTwox() {
+        document.getElementById('whos-turn').innerHTML = window.players[1].name + "'s turn"
         game.raiseTwoTimes();
         if (window.players[1].currentBet === 0) {
             document.getElementById('raise2x').innerHTML = "Raise to 20"

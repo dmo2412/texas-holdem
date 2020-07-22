@@ -53,6 +53,8 @@ export default class NextCard {
                 .append("p")
                 .text(function (d) { return d })
                 .attr("class", "flopcards")
+            
+            document.getElementById('raise2x').innerHTML = "Raise to 20"
         }
     }
 
@@ -91,6 +93,7 @@ export default class NextCard {
             window.deck.cards.slice(1);
             window.flopCount = 0;
             window.turnBetCount = 0;
+            document.getElementById('raise2x').innerHTML = "Raise to 20"
         }
     }
 
@@ -128,6 +131,7 @@ export default class NextCard {
                 .attr("class", "flopcards")
 
             window.betRound += 1;
+            document.getElementById('raise2x').innerHTML = "Raise to 20"
         }
     }
 }
