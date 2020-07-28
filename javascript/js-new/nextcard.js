@@ -55,6 +55,9 @@ export default class NextCard {
                 .attr("class", "flopcards")
             
             document.getElementById('raise2x').innerHTML = "Raise to 20"
+            document.getElementById('philbet').innerHTML = ""
+            document.getElementById('mikebet').innerHTML = ""
+            
         }
     }
 
@@ -94,6 +97,8 @@ export default class NextCard {
             window.flopCount = 0;
             window.turnBetCount = 0;
             document.getElementById('raise2x').innerHTML = "Raise to 20"
+            document.getElementById('philbet').innerHTML = ""
+            document.getElementById('mikebet').innerHTML = ""
         }
     }
 
@@ -132,6 +137,8 @@ export default class NextCard {
 
             window.betRound += 1;
             document.getElementById('raise2x').innerHTML = "Raise to 20"
+            document.getElementById('philbet').innerHTML = ""
+            document.getElementById('mikebet').innerHTML = ""
         }
     }
 }

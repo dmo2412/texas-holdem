@@ -67,4 +67,31 @@ export default class Game {
         window.players.push(first)
         this.cards.startScoreboard();
     }
+
+    computer() {
+        let ele = Math.floor(Math.random() * 10);
+        let last = window.player1.currentBet;
+        if (last > 0 && window.players[0] === window.player2) {
+            if (ele <= 1) {
+                this.fold()
+                document.getElementById('philbet').innerHTML = "fold"
+                window.dealCountTurn = 0
+                document.getElementById("whos-turn").innerHTML = ""
+            } else if (ele <= 6 && ele > 1) {
+                this.call()
+                document.getElementById('philbet').innerHTML = "call " + window.player1.currentBet
+            } else if (ele > 6) {
+                this.raiseTwoTimes()
+                document.getElementById('philbet').innerHTML = "raise to " + (window.player1.currentBet * 2)
+            }
+        } else if (last === 0 && window.players[0] === window.player2) {
+            if (ele <= 5) {
+                this.check()
+                document.getElementById('philbet').innerHTML = 'check'
+            } else if (ele > 5) {
+                this.raiseTwoTimes()
+                document.getElementById('philbet').innerHTML = 'raise to 20'
+            }
+        }
+    }
 }
