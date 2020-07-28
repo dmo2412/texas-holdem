@@ -6,7 +6,8 @@ export default class NextCard {
 
     postFlop() {
         if (window.turnCount === 1 && window.player1.currentBet === window.player2.currentBet) {
-            
+            document.getElementById('philbet').innerHTML = ""
+            document.getElementById('mikebet').innerHTML = ""
             let c = window.deck.cards.slice(0,3);
             window.middleCards = window.middleCards.concat(c);
         
@@ -55,6 +56,8 @@ export default class NextCard {
                 .attr("class", "flopcards")
             
             document.getElementById('raise2x').innerHTML = "Raise to 20"
+            
+            
         }
     }
 
@@ -94,6 +97,8 @@ export default class NextCard {
             window.flopCount = 0;
             window.turnBetCount = 0;
             document.getElementById('raise2x').innerHTML = "Raise to 20"
+            document.getElementById('philbet').innerHTML = ""
+            document.getElementById('mikebet').innerHTML = ""
         }
     }
 
@@ -131,7 +136,11 @@ export default class NextCard {
                 .attr("class", "flopcards")
 
             window.betRound += 1;
+            window.player1.currentBet = 0
+            window.player2.currentBet = 0
             document.getElementById('raise2x').innerHTML = "Raise to 20"
+            document.getElementById('philbet').innerHTML = ""
+            document.getElementById('mikebet').innerHTML = ""
         }
     }
 }

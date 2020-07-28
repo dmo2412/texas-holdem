@@ -95,14 +95,14 @@ export default class Preflop {
             window.player1.chips -= 5;
             window.player1.deadmoney += 5;
             window.player1.currentBet += 5;
-            this.ctx.beginPath();
-            this.ctx.arc(300, 20, 10, 0, Math.PI * 2);
-            this.ctx.fillStyle = "tomato";
-            this.ctx.text = '10';
-            this.ctx.fill();
-            this.ctx.closePath();
-            this.ctx.strokeStyle = "black";
-            this.ctx.stroke();
+            // this.ctx.beginPath();
+            // this.ctx.arc(300, 20, 10, 0, Math.PI * 2);
+            // this.ctx.fillStyle = "tomato";
+            // this.ctx.text = '10';
+            // this.ctx.fill();
+            // this.ctx.closePath();
+            // this.ctx.strokeStyle = "black";
+            // this.ctx.stroke();
 
             first = window.players[0]
             window.players.shift();
@@ -111,14 +111,14 @@ export default class Preflop {
             window.player2.chips -= 10;
             window.player2.deadmoney += 10;
             window.player2.currentBet += 10;
-            this.ctx.beginPath();
-            this.ctx.arc(260, 20, 10, 0, Math.PI * 2);
-            this.ctx.fillStyle = "tomato";
-            this.ctx.text = '10';
-            this.ctx.fill();
-            this.ctx.closePath();
-            this.ctx.strokeStyle = "black";
-            this.ctx.stroke();
+            // this.ctx.beginPath();
+            // this.ctx.arc(260, 20, 10, 0, Math.PI * 2);
+            // this.ctx.fillStyle = "tomato";
+            // this.ctx.text = '10';
+            // this.ctx.fill();
+            // this.ctx.closePath();
+            // this.ctx.strokeStyle = "black";
+            // this.ctx.stroke();
 
             first = window.players[0]
             window.players.shift();
@@ -127,14 +127,14 @@ export default class Preflop {
             window.player2.chips -= 5;
             window.player2.deadmoney += 5;
             window.player2.currentBet += 5;
-            this.ctx.beginPath();
-            this.ctx.arc(260, 20, 10, 0, Math.PI * 2);
-            this.ctx.fillStyle = "tomato";
-            this.ctx.text = '10';
-            this.ctx.fill();
-            this.ctx.closePath();
-            this.ctx.strokeStyle = "black";
-            this.ctx.stroke();
+            // this.ctx.beginPath();
+            // this.ctx.arc(260, 20, 10, 0, Math.PI * 2);
+            // this.ctx.fillStyle = "tomato";
+            // this.ctx.text = '10';
+            // this.ctx.fill();
+            // this.ctx.closePath();
+            // this.ctx.strokeStyle = "black";
+            // this.ctx.stroke();
 
             window.player1.chips -= 10;
             window.player1.deadmoney += 10;
@@ -144,14 +144,14 @@ export default class Preflop {
             window.players.shift();
             window.players.push(first);
 
-            this.ctx.beginPath();
-            this.ctx.arc(270, 20, 10, 0, Math.PI * 2);
-            this.ctx.fillStyle = "tomato";
-            this.ctx.text = '10';
-            this.ctx.fill();
-            this.ctx.closePath();
-            this.ctx.strokeStyle = "black";
-            this.ctx.stroke();
+            // this.ctx.beginPath();
+            // this.ctx.arc(270, 20, 10, 0, Math.PI * 2);
+            // this.ctx.fillStyle = "tomato";
+            // this.ctx.text = '10';
+            // this.ctx.fill();
+            // this.ctx.closePath();
+            // this.ctx.strokeStyle = "black";
+            // this.ctx.stroke();
 
             first = window.players[0]
             window.players.shift();

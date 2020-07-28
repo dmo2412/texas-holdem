@@ -73,6 +73,7 @@ export default class SolveHand {
 
 
             window.dealCount = 0;
+            window.dealCountTurn = 0;
             window.betRound = 0;
             window.count = 0;
             window.firstBet = 0;
@@ -88,6 +89,7 @@ export default class SolveHand {
             window.player2.cardPool = [];
             window.deck.cards = [];
             player2cards = [];
+            document.getElementById("whos-turn").innerHTML = ""
 
 
         }
