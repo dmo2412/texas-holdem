@@ -1,4 +1,4 @@
-import Deck from '../javascript/js/deck'
+import Deck from '../javascript/js-new/deck'
 import Cards from '../javascript/js-new/preflop';
 import Game from '../javascript/js-new/game';
 
@@ -14,12 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
     window.dealCountTurn = 0;
     let playerShift = 0;
     // document.getElementById('currBet').innerHTML = "current Bet:" + window.player1.currentBet;
-
+    
     document.getElementById('player2chips').innerHTML = window.player2.chips;
     document.getElementById('player1chips').innerHTML = window.player1.chips;
-
+    
     document.getElementById('hands').onclick = function dealTheCards() {
         if (window.dealCountTurn === 0) {
+            window.player1.currentBet = 0;
+            window.player2.currentBet = 0;
             window.dealCountTurn = 1;
         const players = [window.player1, window.player2];
         
@@ -59,6 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         document.getElementById("philbet").innerHTML = ""
         document.getElementById("mikebet").innerHTML = ""
+        document.getElementById('raise2x').innerHTML = "Raise to 20"
+        document.getElementById('call').innerHTML = "call 5"
+        window.turnCount = 0;
 
     }
     }
@@ -70,14 +75,15 @@ document.addEventListener("DOMContentLoaded", () => {
             game.call();
             document.getElementById('player2chips').innerHTML = window.player2.chips;
             document.getElementById('player1chips').innerHTML = window.player1.chips;
+            document.getElementById('raise2x').innerHTML = "Raise to 20"
         }
     }
 
     document.getElementById('check').onclick = function checkTurn() {
         if (window.players[0] === window.player1) {
             document.getElementById('whos-turn').innerHTML = "Click CPU Player for computer turn"
-            game.check();
             document.getElementById('mikebet').innerHTML = "check"
+            game.check();
         }
     }
 
@@ -85,11 +91,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (window.players[0] === window.player1) {
             document.getElementById('whos-turn').innerHTML = "Click CPU Player for computer turn"
             game.raiseTwoTimes();
-            if (window.players[1].currentBet === 0) {
+            if (window.player2.currentBet === 0) {
                 document.getElementById('raise2x').innerHTML = "Raise to 20"
                 document.getElementById('mikebet').innerHTML = "raise to 20"
             } else {
-                document.getElementById('raise2x').innerHTML = 'Raise to ' + window.players[1].currentBet * 2; 
+                document.getElementById('raise2x').innerHTML = 'Raise to ' + window.player2.currentBet * 2; 
                 document.getElementById('mikebet').innerHTML = 'Raise to ' + window.player2.currentBet * 2; 
             }
             document.getElementById('player2chips').innerHTML = window.player2.chips;

@@ -38,6 +38,7 @@ export default class Game {
         this.nextCard.postRiver();
         this.solve.solveHands();
         this.cards.startScoreboard();
+        document.getElementById('call').innerHTML = "Call"
     }
 
     check() {
@@ -57,6 +58,7 @@ export default class Game {
         this.raising.postTurnRaise();
         this.raising.postRiverRaise();
         this.cards.startScoreboard();
+        
     }
 
     fold() {
@@ -71,7 +73,8 @@ export default class Game {
     computer() {
         let ele = Math.floor(Math.random() * 10);
         let last = window.player1.currentBet;
-        if (last > 0 && window.players[0] === window.player2) {
+        debugger
+        if (last > window.player2.currentBet && window.players[0] === window.player2) {
             if (ele <= 1) {
                 this.fold()
                 document.getElementById('philbet').innerHTML = "fold"
@@ -83,14 +86,17 @@ export default class Game {
             } else if (ele > 6) {
                 this.raiseTwoTimes()
                 document.getElementById('philbet').innerHTML = "raise to " + (window.player1.currentBet * 2)
+                document.getElementById('call').innerHTML = "Call 20"
             }
-        } else if (last === 0 && window.players[0] === window.player2) {
+        } else if ((last === 0 || last === window.player2.currentBet)  && window.players[0] === window.player2) {
             if (ele <= 5) {
                 this.check()
                 document.getElementById('philbet').innerHTML = 'check'
             } else if (ele > 5) {
                 this.raiseTwoTimes()
+                document.getElementById('raise2x').innerHTML = "Raise to " + window.player2.currentBet * 2
                 document.getElementById('philbet').innerHTML = 'raise to 20'
+                document.getElementById("call").innerHTML = "Call " + window.player2.currentBet
             }
         }
     }

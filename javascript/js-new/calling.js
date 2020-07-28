@@ -33,6 +33,7 @@ export default class Call {
 
     preflopCall() {
         if (window.firstBet > 0 && window.middleCards.length === 0 && window.players[1].currentBet > window.players[0].currentBet) {
+            debugger
             window.players[0].chips -= (window.players[1].currentBet - window.players[0].currentBet);
             
             window.players[0].deadmoney += (window.players[1].currentBet -window.players[0].currentBet);
@@ -43,7 +44,7 @@ export default class Call {
             let first = window.players[0];
             window.players.shift();
             window.players.push(first);
-            window.turnCount = 1;
+            window.turnCount += 1;
             
         }
     }
