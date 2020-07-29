@@ -56,6 +56,9 @@ export default class NextCard {
                 .attr("class", "flopcards")
             
             document.getElementById('raise2x').innerHTML = "Raise to 20"
+
+            d3.selectAll(".mikecurrentbet").remove()
+            d3.selectAll(".philcurrentbet").remove()
             
             
         }
@@ -99,6 +102,8 @@ export default class NextCard {
             document.getElementById('raise2x').innerHTML = "Raise to 20"
             document.getElementById('philbet').innerHTML = ""
             document.getElementById('mikebet').innerHTML = ""
+            d3.selectAll(".mikecurrentbet").remove()
+            d3.selectAll(".philcurrentbet").remove()
         }
     }
 
@@ -141,6 +146,8 @@ export default class NextCard {
             document.getElementById('raise2x').innerHTML = "Raise to 20"
             document.getElementById('philbet').innerHTML = ""
             document.getElementById('mikebet').innerHTML = ""
+            d3.selectAll(".mikecurrentbet").remove()
+            d3.selectAll(".philcurrentbet").remove()
         }
     }
 }
