@@ -25,6 +25,20 @@ export default class Game {
 
     createGame() {
         this.cards.startScoreboard();
+        // d3.selectAll(".mikecurrentbet").remove()
+        // d3.select('.MikeM').selectAll('p')
+        //     .data(window.player1Bet)
+        //     .enter()
+        //     .append("p")
+        //     .text(function (d) { return "current bet: " + d.currentBet })
+        //     .attr("class", 'mikecurrentbet')
+        // d3.selectAll(".philcurrentbet").remove()
+        // d3.select('.phil').selectAll('p')
+        //     .data(window.player1Bet)
+        //     .enter()
+        //     .append("p")
+        //     .text(function (d) { return "current bet: " + d.currentBet })
+        //     .attr("class", 'philcurrentbet')
     }
 
     call() {
@@ -39,6 +53,13 @@ export default class Game {
         this.solve.solveHands();
         this.cards.startScoreboard();
         document.getElementById('call').innerHTML = "Call"
+        // d3.selectAll(".mikecurrentbet").remove()
+        // d3.select('.MikeM').selectAll('p')
+        //     .data(window.player1Bet)
+        //     .enter()
+        //     .append("p")
+        //     .text(function (d) { return "current bet: " + d.currentBet })
+        //     .attr("class", 'mikecurrentbet')
     }
 
     check() {
@@ -58,6 +79,13 @@ export default class Game {
         this.raising.postTurnRaise();
         this.raising.postRiverRaise();
         this.cards.startScoreboard();
+        // d3.selectAll(".mikecurrentbet").remove()
+        // d3.select('.MikeM').selectAll('p')
+        //     .data(window.player1Bet)
+        //     .enter()
+        //     .append("p")
+        //     .text(function (d) { return "current bet: " + d.currentBet })
+        //     .attr("class", 'mikecurrentbet')
         
     }
 
@@ -68,6 +96,13 @@ export default class Game {
         this.solve.solveHands();
         window.players.push(first)
         this.cards.startScoreboard();
+        // d3.selectAll(".mikecurrentbet").remove()
+        // d3.select('.MikeM').selectAll('p')
+        //     .data(window.player1Bet)
+        //     .enter()
+        //     .append("p")
+        //     .text(function (d) { return "current bet: " + d.currentBet })
+        //     .attr("class", 'mikecurrentbet')
     }
 
     computer() {
@@ -88,6 +123,13 @@ export default class Game {
                 document.getElementById('philbet').innerHTML = "raise to " + (window.player1.currentBet * 2)
                 document.getElementById('call').innerHTML = "Call 20"
             }
+            // d3.selectAll(".philcurrentbet").remove()
+            // d3.select('.phil').selectAll('p')
+            //     .data(window.player1Bet)
+            //     .enter()
+            //     .append("p")
+            //     .text(function (d) { return "current bet: " + d.currentBet })
+            //     .attr("class", 'philcurrentbet')
         } else if ((last === 0 || last === window.player2.currentBet)  && window.players[0] === window.player2) {
             if (ele <= 5) {
                 this.check()
@@ -98,6 +140,13 @@ export default class Game {
                 document.getElementById('philbet').innerHTML = 'raise to 20'
                 document.getElementById("call").innerHTML = "Call " + window.player2.currentBet
             }
+            // d3.selectAll(".philcurrentbet").remove()
+            // d3.select('.phil').selectAll('p')
+            //     .data(window.player1Bet)
+            //     .enter()
+            //     .append("p")
+            //     .text(function (d) { return "current bet: " + d.currentBet })
+            //     .attr("class", 'philcurrentbet')
         }
     }
 }

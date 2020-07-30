@@ -29,6 +29,8 @@ export default class Preflop {
         window.deck = new Deck();
         this.canvas = document.getElementById("myCanvas");
         this.ctx = this.canvas.getContext("2d");
+        window.player1Bet = [window.player1]
+        window.player2Bet = [window.player2]
     }
 
     setOrder() {
@@ -161,6 +163,13 @@ export default class Preflop {
         window.pot.chips += 15;
         d3.selectAll(".playernames").remove();
         this.startScoreboard();
+
+        // d3.select('.MikeM').selectAll('img')
+        // .data(window.player1Bet)
+        // .enter()
+        // .append("p")
+        // .text(function (d) {return "current bet: " + d.currentBet})
+        // .attr("class", 'mikecurrentbet')
     }
 
     startScoreboard() {
