@@ -176,6 +176,8 @@
     position: fixed;
     margin-left: 3%;
     margin-top: -10%;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 #rules {

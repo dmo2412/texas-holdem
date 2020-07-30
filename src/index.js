@@ -61,8 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         document.getElementById("philbet").innerHTML = ""
         document.getElementById("mikebet").innerHTML = ""
-        document.getElementById('raise2x').innerHTML = "Raise to 20"
-        document.getElementById('call').innerHTML = "call 5"
+        document.getElementById('raise2x').innerHTML = "Raise 2x"
+        document.getElementById('call').innerHTML = "Call"
         window.turnCount = 0;
 
     }
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
             game.call();
             document.getElementById('player2chips').innerHTML = window.player2.chips;
             document.getElementById('player1chips').innerHTML = window.player1.chips;
-            document.getElementById('raise2x').innerHTML = "Raise to 20"
+            // document.getElementById('raise2x').innerHTML = "Raise"
         }
     }
 
@@ -92,11 +92,11 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('whos-turn').innerHTML = "Click CPU Player for computer turn"
             game.raiseTwoTimes();
             if (window.player2.currentBet === 0) {
-                document.getElementById('raise2x').innerHTML = "Raise to 20"
-                document.getElementById('mikebet').innerHTML = "raise to 20"
+                // document.getElementById('raise2x').innerHTML = "Raise 2x"
+                document.getElementById('mikebet').innerHTML = "raise 20"
             } else {
-                document.getElementById('raise2x').innerHTML = 'Raise to ' + window.player2.currentBet * 2; 
-                document.getElementById('mikebet').innerHTML = 'Raise to ' + window.player2.currentBet * 2; 
+                document.getElementById('raise2x').innerHTML = 'Raise 2x'
+                document.getElementById('mikebet').innerHTML = 'Raise ' + window.player2.currentBet * 2;
             }
             document.getElementById('player2chips').innerHTML = window.player2.chips;
             document.getElementById('player1chips').innerHTML = window.player1.chips;
