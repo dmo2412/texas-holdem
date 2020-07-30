@@ -138,7 +138,6 @@ export default class SolveHand {
     returnWinner() {
         for (let i = 0; i < players.length; i++) {
             if (JSON.stringify(window.players[i].cardPool.sort()) === JSON.stringify(window.winningHand)) {
-                console.log(window.players[i].name)
                 window.players[i].chips += window.pot.chips;
                 window.pot.chips = 0;
                 window.winningPlayerName = [window.players[i].name];
