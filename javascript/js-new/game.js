@@ -116,12 +116,12 @@ export default class Game {
                 window.dealCountTurn = 0
                 document.getElementById("whos-turn").innerHTML = ""
             } else if (ele <= 6 && ele > 1) {
-                this.call()
                 document.getElementById('philbet').innerHTML = "call " + window.player1.currentBet
+                this.call()
             } else if (ele > 6) {
                 this.raiseTwoTimes()
                 document.getElementById('philbet').innerHTML = "raise to " + (window.player1.currentBet * 2)
-                document.getElementById('call').innerHTML = "Call 20"
+                document.getElementById('call').innerHTML = "Call"
             }
             // d3.selectAll(".philcurrentbet").remove()
             // d3.select('.phil').selectAll('p')
@@ -138,7 +138,7 @@ export default class Game {
                 this.raiseTwoTimes()
                 document.getElementById('raise2x').innerHTML = "Raise to " + window.player2.currentBet * 2
                 document.getElementById('philbet').innerHTML = 'raise to 20'
-                document.getElementById("call").innerHTML = "Call " + window.player2.currentBet
+                // document.getElementById("call").innerHTML = "Call " + window.player2.currentBet
             }
             // d3.selectAll(".philcurrentbet").remove()
             // d3.select('.phil').selectAll('p')

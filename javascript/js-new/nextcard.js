@@ -55,7 +55,7 @@ export default class NextCard {
                 .text(function (d) { return d })
                 .attr("class", "flopcards")
             
-            document.getElementById('raise2x').innerHTML = "Raise to 20"
+            // document.getElementById('raise2x').innerHTML = "Raise to 20"
 
             d3.selectAll(".mikecurrentbet").remove()
             d3.selectAll(".philcurrentbet").remove()
@@ -99,7 +99,7 @@ export default class NextCard {
             window.deck.cards.slice(1);
             window.flopCount = 0;
             window.turnBetCount = 0;
-            document.getElementById('raise2x').innerHTML = "Raise to 20"
+            document.getElementById('raise2x').innerHTML = "Raise 2x"
             document.getElementById('philbet').innerHTML = ""
             document.getElementById('mikebet').innerHTML = ""
             d3.selectAll(".mikecurrentbet").remove()
@@ -143,7 +143,7 @@ export default class NextCard {
             window.betRound += 1;
             window.player1.currentBet = 0
             window.player2.currentBet = 0
-            document.getElementById('raise2x').innerHTML = "Raise to 20"
+            document.getElementById('raise2x').innerHTML = "Raise 2x"
             document.getElementById('philbet').innerHTML = ""
             document.getElementById('mikebet').innerHTML = ""
             d3.selectAll(".mikecurrentbet").remove()
